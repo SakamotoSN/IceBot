@@ -19,15 +19,11 @@
     "ffmpeg-binaries": "^4.0.0",
     "libsodium-wrappers": "^0.7.5",
     "lowdb": "^1.0.0",
-    "lzma-native": "^6.0.1",
     "node-opus": "^0.3.3",
     "opusscript": "^0.0.7",
     "simple-youtube-api": "^5.2.1",
     "uws": "^99.0.0",
     "ytdl-core": "^2.1.4"
-  },
-  "engines": {
-    "node": "12.x"
   },
   "repository": {
     "url": "https://glitch.com/edit/#!/hello-express"
