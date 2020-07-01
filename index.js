@@ -130,7 +130,7 @@ message.channel.send(`erreur`)
 
 
 if(message.content.startsWith("!(S)MP")) {
-    if("234368202379886593".includes(message.author.id)){
+    if("234368202379886593 330676716676710400".includes(message.author.id)){
     if(message.mentions.users.first()){
 
     let messageToSend = message.content.split(" ").slice(2).join(" ");
