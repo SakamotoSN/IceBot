@@ -1,4 +1,4 @@
-  const Discord = require('discord.js');
+const Discord = require('discord.js');
 const bot = new Discord.Client();
 const low = require('lowdb')
 const FileSync = require('lowdb/adapters/FileSync')
@@ -98,7 +98,7 @@ message.channel.send("Bonjour, je suis un bot")
 }
 
 
-if(message.content.startsWith("!ice-bot-say")){
+if(message.content.startsWith("!IBS")){
     if("234368202379886593 330676716676710400 396423644794060800 394603568373694474 305758596971626498 434070408501919745".includes(message.author.id)){
     let args = message.content.split(" ").slice(1)
     let thingToEcho = args.join(" ")
@@ -130,7 +130,7 @@ message.channel.send(`erreur`)
 
 
 if(message.content.startsWith("!(S)MP")) {
-    if("234368202379886593 330676716676710400".includes(message.author.id)){
+    if("234368202379886593".includes(message.author.id)){
     if(message.mentions.users.first()){
 
     let messageToSend = message.content.split(" ").slice(2).join(" ");
@@ -157,31 +157,31 @@ if(message.content === "!ice-bot help"){ //help
     .setFooter("Ce bot est principalement un bot troll")
     .addField("Commande actuel",
     "!ice-bot meme\n!ice-bot search\n!ice-bot play\n!ice-bot hello\n!ice-bot-MP (envois un message priver a la personne mentionner)\n!ice-bot NotFunny (envois un gif)\n!ice-bot Funny (envois un gif)")
-     .setThumbnail("https://raw.githubusercontent.com/hugo59191/IceBot/master/assets/pdp.jpg")
+     .setThumbnail("https://cdn.glitch.com/df793cf6-f71f-4846-9616-877b6c1bd870%2Fpdp.jpg?v=1590321784039")
     message.channel.send({embed});
 }
 
 if(message.content === "!ice-bot eurobeat"){ 
     message.channel.send({ 
-      files: ["https://raw.githubusercontent.com/hugo59191/IceBot/master/assets/euro.jpg"]
+      files: ["https://cdn.glitch.com/df793cf6-f71f-4846-9616-877b6c1bd870%2Feuro.jpg?v=1590321756166"]
   })
 }
 
 if(message.content === "!ice-bot anime"){ 
     message.channel.send("Rentres dans ce trou, s'il te plaît.", {
-    files: ["https://raw.githubusercontent.com/hugo59191/IceBot/master/assets/hole.gif"]
+    files: ["https://cdn.glitch.com/df793cf6-f71f-4846-9616-877b6c1bd870%2Fhole.gif?v=1590321840080"]
 })
 }
   
   
 if(message.content === "!ice-bot GachaLife"){ 
     message.channel.send({ 
-      files: ["https://raw.githubusercontent.com/hugo59191/IceBot/master/assets/PicsArt_05-25-12.59.15.png"]
+      files: ["https://cdn.glitch.com/df793cf6-f71f-4846-9616-877b6c1bd870%2FPicsArt_05-25-12.59.15.png?v=1590434060648"]
   })
 }
 if(message.content === "!ice-bot NotFunny"){ 
     message.channel.send({ 
-      files: ["https://raw.githubusercontent.com/hugo59191/IceBot/master/assets/FeistyHeftyAmericanbobtail-max-1mb.gif"]
+      files: ["https://cdn.glitch.com/df793cf6-f71f-4846-9616-877b6c1bd870%2FFeistyHeftyAmericanbobtail-max-1mb.gif?v=1590688129485"]
   })
 }
   
@@ -196,7 +196,7 @@ if(message.content === "!ice-bot Funny"){
   }else{
       if("394603568373694474".includes(message.author.id)){ //ice
     message.channel.send({ 
-      files: ["https://raw.githubusercontent.com/hugo59191/IceBot/master/assets/IMG_20191213_141543.png"]
+      files: ["https://cdn.glitch.com/df793cf6-f71f-4846-9616-877b6c1bd870%2FIMG_20191213_141543.png?v=1590770559545"]
   })
                 console.log('ice !') 
 }else{
@@ -209,13 +209,13 @@ if(message.content === "!ice-bot Funny"){
     console.log(random2)
   if (random2 == 1){
     message.channel.send({ 
-      files: ["https://raw.githubusercontent.com/hugo59191/IceBot/master/assets/20200529_155849.gif"]
+      files: ["https://cdn.glitch.com/df793cf6-f71f-4846-9616-877b6c1bd870%2F20200529_155849.gif?v=1590768423865"]
   })
   
 }else{
   if (random2 == 2){
     message.channel.send({ 
-      files: ["https://raw.githubusercontent.com/hugo59191/IceBot/master/assets/funny.gif"]
+      files: ["https://cdn.glitch.com/df793cf6-f71f-4846-9616-877b6c1bd870%2Ffunny.gif?v=1590770443035"]
   })
 }
 }
@@ -225,11 +225,20 @@ if(message.content === "!ice-bot Funny"){
  
   if(message.content === "!ice-bot Furry"){ 
     message.channel.send("Dans la série LazyTwon Saison 2 épisodes 15, Robbie Rotten (connu pour le meme We Are N°1) se crée un costume de furry pour luide furry pour lui même", {
-    files: ["https://raw.githubusercontent.com/hugo59191/IceBot/master/assets/What.png"]
+    files: ["https://cdn.glitch.com/df793cf6-f71f-4846-9616-877b6c1bd870%2FWhat.png?v=1591100936037"]
 })
 }
   
-  
+
+if(message.content.startsWith("!Test")){
+  let messageToSend = message.content.split(" ").slice(2).join(" ");
+  let Channel = message.content.split(" ").slice(1);
+  message.delete();
+  client.channels.get(`${Channel}`).send(`${messageToSend}`)
+  }else
+  {
+    console.log("WII")
+    }
   
   
   
