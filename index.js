@@ -230,15 +230,7 @@ if(message.content === "!ice-bot Funny"){
 }
   
 
-if(message.content.startsWith("!Test")){
-  let messageToSend = message.content.split(" ").slice(2).join(" ");
-  let Channel = message.content.split(" ").slice(1);
-  message.delete();
-  client.channels.get(`${Channel}`).send(`${messageToSend}`)
-  }else
-  {
-    console.log("WII")
-    }
+
   
   
   
