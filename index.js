@@ -1,3 +1,4 @@
+  
 const Discord = require('discord.js');
 const bot = new Discord.Client();
 const low = require('lowdb')
@@ -335,6 +336,5 @@ if(message.content === "!ice-bot Funny"){
 
   
   
-}
 }
 )
