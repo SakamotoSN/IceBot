@@ -101,7 +101,7 @@ if (OnOff === true){
       return;
   }else{
 
-    if (message.content.includes("@everyone") || (message.content.includes("@here")  ){
+    if (message.content.includes("@everyone") ){
       //console.log("Everyone dedected")
      return;
 
