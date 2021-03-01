@@ -36,7 +36,7 @@ var aléa_random = 0
 var plus_petit = -2
 var plus_grand = -1
 var tentative = 0
-var AFM = true
+var AFM = false
 
 
 
