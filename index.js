@@ -13,7 +13,7 @@ const Youtube = require('simple-youtube-api')
 const YTKEY =process.env.YTAPI
 const thereisasong = false
 const youtube = new Youtube(YTKEY)
-var OP = "234368202379886593 305758596971626498 330676716676710400 435125705907503105 424677919512723466 773582054880182282 434070408501919745 434070408501919745 371653593473744896"
+var OP = "234368202379886593"
 
 function random(min, max) {
     min = Math.ceil(0)// 0 est impossible a avoir !ice-bot
