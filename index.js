@@ -36,7 +36,7 @@ var aléa_random = 0
 var plus_petit = -2
 var plus_grand = -1
 var tentative = 0
-
+var AFM = false
 
 
 
@@ -59,6 +59,75 @@ bot.login(process.env.TOKEN);
 
 bot.on('message', message => {
 
+
+
+
+
+  //debut AFM
+  if (AFM = true){
+  if (message.author.bot) return; //le bot ne peu pas prendre ces message
+  let test = message.content.split(" ");
+//console.log(`entrer ${test}`)
+var texte = test[test.length - 1];
+//console.log(`dernier mot : ${texte}`) //prend que le dernier mots
+if((texte.toLowerCase().includes('?')) || (texte.toLowerCase().includes('!')) ||(texte.toLowerCase().includes('.')) ){
+  var texte = test[test.length - 2];
+  //console.log("un ? a etais detecter dans le code" )
+  //console.log(texte)
+} //si un ? est le dernier mots prend avant dernier
+  if (texte === undefined) {
+    return;
+}else{
+  
+  if ( (texte.toLowerCase()).includes("quoi", (texte.lenght-5) )){
+  if ((message.content.length) > 1000){
+    message.channel.send(`Pour éviter de flood le salon nous avons decider de ne pas citer le message, merci de votre compréhension"\n${message.author}`, {
+      files: [
+        "./folder/feur.mp4"
+      ]
+    })}
+    else{
+      message.channel.send(`> "${message}" ${message.author} `, {
+        files: [
+          "./folder/feur.mp4"
+        ]
+      })
+
+    }
+  }
+  if ( (texte.toLowerCase()).includes("non", (texte.lenght-4) )){
+    if (message.content.length > 1000){
+      message.channel.send(`Pour éviter de flood le salon nous avons decider de ne pas citer le message, merci de votre compréhension"\n${message.author}`, {
+          files: [
+            "./folder/bril.mp4"
+          ]
+        })}
+      else{
+        message.channel.send(`> "${message}" ${message.author} `, {
+          files: [
+            "./folder/bril.mp4"
+          ]
+        })
+
+      }
+    }
+    if ( (texte.toLowerCase()).includes("oui", (texte.lenght-4) )){
+    if (message.content.length > 1000){
+      message.channel.send(`Pour éviter de flood le salon nous avons decider de ne pas citer le message, merci de votre compréhension"\n${message.author}`, {
+          files: [
+            "./folder/stiti.mp4"
+          ]
+        })
+      }else{
+        message.channel.send(`> "${message}" ${message.author} `, {
+          files: [
+            "./folder/stiti.mp4"
+          ]
+        })
+      }
+}
+}
+  //fin AFM
 
 
 if(message.content.startsWith("!ice-bot meme")){
@@ -233,6 +302,6 @@ if(message.content === "!ice-bot Funny"){
 
   
   
-  
+}
 }
 )
