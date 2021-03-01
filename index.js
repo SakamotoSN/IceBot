@@ -64,7 +64,7 @@ bot.on('message', message => {
 
 
   //debut AFM
-  if (AFM = true){
+  if (AFM === true){
   if (message.author.bot) return; //le bot ne peu pas prendre ces message
   let test = message.content.split(" ");
 //console.log(`entrer ${test}`)
