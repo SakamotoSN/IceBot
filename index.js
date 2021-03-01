@@ -83,13 +83,13 @@ if (message.author.bot) return; //le bot ne peu pas prendre ces message
     if ((message.content.length) > 1000){
       message.channel.send(`Pour éviter de flood le salon nous avons decider de ne pas citer le message, merci de votre compréhension"\n${message.author}`, {
         files: [
-          "./folder/feur.mp4"
+          "./feur.mp4"
         ]
       })}
       else{
         message.channel.send(`> "${message}" ${message.author} `, {
           files: [
-            "./folder/feur.mp4"
+            "./feur.mp4"
           ]
         })
 
@@ -109,14 +109,14 @@ if (message.author.bot) return; //le bot ne peu pas prendre ces message
       if (message.content.length > 1000){
         message.channel.send(`Pour éviter de flood le salon nous avons decider de ne pas citer le message, merci de votre compréhension"\n${message.author}`, {
             files: [
-              "./folder/bril.mp4"
+              "./bril.mp4"
             ]
           })}
   
         else{
           message.channel.send(`> "${message}" ${message.author} `, {
             files: [
-              "./folder/bril.mp4"
+              "./bril.mp4"
             ]
           })
 
@@ -130,14 +130,14 @@ if (message.author.bot) return; //le bot ne peu pas prendre ces message
       if (message.content.length > 1000){
         message.channel.send(`Pour éviter de flood le salon nous avons decider de ne pas citer le message, merci de votre compréhension"\n${message.author}`, {
             files: [
-              "./folder/stiti.mp4"
+              "./stiti.mp4"
             ]
           })
         
         }else{
           message.channel.send(`> "${message}" ${message.author} `, {
             files: [
-              "./folder/stiti.mp4"
+              "./stiti.mp4"
             ]
           })
 
