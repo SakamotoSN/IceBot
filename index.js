@@ -172,11 +172,7 @@ bot.on('message', message => {
                     "./folder/sternn.mp4"
                   ]
                 })
-              }
-            }
-}
-}
-            
+              }          
 
 
 
