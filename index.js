@@ -86,7 +86,8 @@ bot.on('message', message => {
   
   
   
-  if (OnOff === true){
+
+if (OnOff === true){
     if (message.author.bot) return; //le bot ne peu pas prendre ces message
       let test = message.content.split(" ");
     //console.log(`entrer ${test}`)
@@ -172,10 +173,8 @@ bot.on('message', message => {
                     "./folder/sternn.mp4"
                   ]
                 })
-              }          
-
-
-
+              }
+            }
 
 
 
