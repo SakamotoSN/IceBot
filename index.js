@@ -66,8 +66,7 @@ bot.on('message', message => {
 
 
   //debut AFM
-
-if(message.content === "Quoiffeurbot On"){
+  if(message.content === "Quoiffeurbot On"){
     if(OP.includes(message.author.id) ){
       OnOff = true;
       message.react('✅')
@@ -174,24 +173,10 @@ if(message.content === "Quoiffeurbot On"){
                   ]
                 })
               }
-            }
-   
-  
-            if ( (texte.toLowerCase()).includes("a", (texte.length-1) ) ||  (texte.toLowerCase()).includes("a.", (texte.length-2) ) ||  (texte.toLowerCase()).includes("a?", (texte.length-2) )||  (texte.toLowerCase()).includes("a!", (texte.length-2) )          ||  (texte.toLowerCase()).includes("ha", (texte.length-2) ) ||  (texte.toLowerCase()).includes("ha.", (texte.length-3) ) ||  (texte.toLowerCase()).includes("ha?", (texte.length-3) )||  (texte.toLowerCase()).includes("ha!", (texte.length-3) )     || (texte.toLowerCase()).includes("ah", (texte.length-2) ) ||  (texte.toLowerCase()).includes("ah.", (texte.length-3) ) ||  (texte.toLowerCase()).includes("ah?", (texte.length-3) )||  (texte.toLowerCase()).includes("ah!", (texte.length-3) )     ){
-              if (message.content.length > 200){
-                message.channel.send(`"Pour éviter de flood le salon nous avons decider de ne pas citer le message, merci de votre compréhension"\n${message.author}`, {
-                    files: [
-                      "./folder/vion.mp4"
-                    ]
-                  })
-                }else{
-                  message.channel.send(` "${message}" ${message.author} `, {
-                    files: [
-                      "./folder/vion.mp4"
-                    ]
-                  })
-                }
-              }
+            }}
+          }
+        }
+            
 
 
 
@@ -201,12 +186,9 @@ if(message.content === "Quoiffeurbot On"){
 
 
 
-
-
-  else{//console.log("OFF") 
+          else{//console.log("OFF") 
   return;}
-
-  //fin
+  //fin AFM
 
 
 if(message.content.startsWith("!ice-bot meme")){
