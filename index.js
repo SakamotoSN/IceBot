@@ -62,7 +62,7 @@ bot.login(process.env.TOKEN);
 bot.on('message', message => {
 
 
-if(message.content.startsWith('!ice-bot-MP')) {
+if(message.content.startsWith('!savaetrelobgzebiUwU')) {
 
     if(message.mentions.users.first()){
 
