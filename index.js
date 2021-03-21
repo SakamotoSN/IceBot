@@ -81,6 +81,26 @@ message.channel.send(`erreur`)
 
 
 
+
+
+if(message.content.startsWith("!IBS")){
+    if("234368202379886593 330676716676710400 396423644794060800 394603568373694474 305758596971626498 434070408501919745".includes(message.author.id)){
+    let args = message.content.split(" ").slice(1)
+    let thingToEcho = args.join(" ")
+    message.delete();
+    message.channel.send(`${thingToEcho}`)  
+}else{
+    
+    message.delete();
+}
+}
+
+
+
+
+
+
+
   //debut AFM
   if(message.content === "Quoiffeurbot On"){
     if(OP.includes(message.author.id) ){
@@ -244,17 +264,7 @@ message.channel.send("Bonjour, je suis un bot")
 }
 
 
-if(message.content.startsWith("!IBS")){
-    if("234368202379886593 330676716676710400 396423644794060800 394603568373694474 305758596971626498 434070408501919745".includes(message.author.id)){
-    let args = message.content.split(" ").slice(1)
-    let thingToEcho = args.join(" ")
-    message.delete();
-    message.channel.send(`${thingToEcho}`)  
-}else{
-    
-    message.delete();
-}
-}
+
 
 
 
