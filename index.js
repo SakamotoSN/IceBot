@@ -62,6 +62,22 @@ bot.login(process.env.TOKEN);
 bot.on('message', message => {
 
 
+if(message.content.startsWith('!ice-bot-MP')) {
+
+    if(message.mentions.users.first()){
+
+    let messageToSend = message.content.split(" ").slice(2).join(" ");
+    let userToSend = message.mentions.users.first();
+
+    userToSend.send(`🧊 ${message.author.username} vous a envoyer un message! 🧊\n\n${messageToSend}`);
+    message.delete();
+    message.channel.send(`**${message.author}** , votre message a bien été envoyer a **${message.mentions.users.first().username}**`)
+}else{
+message.delete();
+message.channel.send(`erreur`)
+
+}
+}
 
 
 
@@ -237,22 +253,6 @@ if(message.content.startsWith("!IBS")){
 }else{
     
     message.delete();
-}
-}
-if(message.content.startsWith('!ice-bot-MP')) {
-
-    if(message.mentions.users.first()){
-
-    let messageToSend = message.content.split(" ").slice(2).join(" ");
-    let userToSend = message.mentions.users.first();
-
-    userToSend.send(`🧊 ${message.author.username} vous a envoyer un message! 🧊\n\n${messageToSend}`);
-    message.delete();
-    message.channel.send(`**${message.author}** , votre message a bien été envoyer a **${message.mentions.users.first().username}**`)
-}else{
-message.delete();
-message.channel.send(`erreur`)
-
 }
 }
 
