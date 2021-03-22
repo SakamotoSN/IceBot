@@ -80,7 +80,7 @@ setTimeout(() => {
   }
   }else{
 message.delete()
-message.channel.send(`:x: Impossible de trouver la personne ${message.author.username} :x:`)
+message.channel.send(`:x: Impossible de trouver la personne ${message.author} :x:`)
 .then(message => {
   message.delete({ timeout: 10000 /*temps en MS*/});
 })
