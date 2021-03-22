@@ -35,7 +35,7 @@ bot.on('message', message => {
 
 
 
-  if(message.content.startsWith('!mp')) {
+  if(message.content.startsWith('!MP')) {
 
     if (message.channel.id === '490465700519870474') {
 
@@ -97,6 +97,9 @@ message.channel.send(`:x: Impossible de trouver la personne ${message.author} :x
   .catch();
 }
 
+}else
+{
+  return;
 }
 
 
