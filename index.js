@@ -59,7 +59,7 @@ bot.on('message', message => {
     } else { 
     let messageToSend = message.content.split(" ").slice(2).join(" ");
     let userToSend = message.mentions.users.first();
-    if((messageToSend) > 1800){ 
+    if((messageToSend.length) > 1800){ 
       message.channel.send(`:x: Le message est trop long ${message.author} :x:`)
       .then(message => {
         message.delete({ timeout: 10000 /*temps en MS*/});
