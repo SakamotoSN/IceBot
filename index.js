@@ -35,7 +35,7 @@ bot.on('message', message => {
 
 
 
-  if(message.content.startsWith('!icebot-MP')) {
+  if(message.content.startsWith('!icebot-MoooooP')) {
 
 if("490465700519870474".includes(message.guild.channels)){
 
