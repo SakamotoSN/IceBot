@@ -90,7 +90,7 @@ message.channel.send(`:x: Impossible de trouver la personne ${message.author} :x
 }
 }else{
   message.delete();
-  message.channel.send(`Tu est actuelement dans <"#${message.channel.id}> ${message.author}, essaye de le faire dans le bon salon`)
+  message.channel.send(`Tu est actuelement dans <#${message.channel.id}> ${message.author}, essaye de le faire dans le bon salon`)
   .then(message => {
     message.delete({ timeout: 10000 /*temps en MS*/});
   })
