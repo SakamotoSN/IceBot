@@ -46,8 +46,8 @@ bot.on('message', message => {
       })
       .catch();
      }else{
-      if (talkedRecently.has(msg.author.id)) {
-        msg.channel.send("Wait 1 minute before getting typing this again. - " + msg.author);
+      if (talkedRecently.has(message.author.id)) {
+        message.channel.send("Wait 1 minute before getting typing this again. - " + message.author);
     } else { 
     let messageToSend = message.content.split(" ").slice(2).join(" ");
     let userToSend = message.mentions.users.first();
