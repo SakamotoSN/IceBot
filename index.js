@@ -35,15 +35,15 @@ bot.on('message', message => {
 
 
 
-  if(message.content.startsWith('!icebot-MoooooP')) {
+  if(message.content.startsWith('!icebot-MP')) {
 
-if("490465700519870474".includes(message.guild.channels)){
+    if (message.channel.id === '490465700519870474') {
 
 
 
     if(message.mentions.users.first()){
      if (message.attachments.size > 0) {
-      message.delete()
+      message.delete();
       message.channel.send(`:x: Impossible d'envoyer un fichier avec le message ${message.author} :x:`)
       .then(message => {
         message.delete({ timeout: 10000 /*temps en MS*/});
@@ -81,7 +81,7 @@ setTimeout(() => {
   }   
   }
   }else{
-message.delete()
+message.delete();
 message.channel.send(`:x: Impossible de trouver la personne ${message.author} :x:`)
 .then(message => {
   message.delete({ timeout: 10000 /*temps en MS*/});
@@ -89,7 +89,12 @@ message.channel.send(`:x: Impossible de trouver la personne ${message.author} :x
 .catch();
 }
 }else{
-  message.channel.send("erroe channel")
+  message.delete();
+  message.channel.send(`Tu est actuelement dans <${Message.channel.id}> ${message.author}, essaye de le faire dans le bon salon`)
+  .then(message => {
+    message.delete({ timeout: 10000 /*temps en MS*/});
+  })
+  .catch();
 }
 
 }
