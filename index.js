@@ -37,7 +37,7 @@ bot.on('message', message => {
 
   if(message.content.startsWith('!mp')) {
 
-    if (message.channel.id === '490465700519870474') {
+    if (message.channel.id === '490465700519870474'|| (message.channel.id === '458959804388343810')) {
       if (message.channel instanceof Discord.DMChannel){
         message.channel.send("no")
       }else{
