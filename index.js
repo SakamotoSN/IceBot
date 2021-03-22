@@ -45,7 +45,7 @@ bot.on('message', message => {
 
 
 
-  if(message.content.startsWith('!ice-bot-MP')) {
+  if(message.content.startsWith('!nnno')) {
 
     if(message.mentions.users.first()){
      if (message.attachments.size > 0) {
