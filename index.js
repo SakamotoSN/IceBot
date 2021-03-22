@@ -35,10 +35,12 @@ bot.on('message', message => {
 
 
 
-  if(message.content.startsWith('!MP')) {
+  if(message.content.startsWith('!mp')) {
 
     if (message.channel.id === '490465700519870474') {
-
+      if (message.channel instanceof Discord.DMChannel){
+        message.channel.send("no")
+      }else{
 
 
     if(message.mentions.users.first()){
@@ -88,6 +90,7 @@ message.channel.send(`:x: Impossible de trouver la personne ${message.author} :x
 })
 .catch();
 }
+      }
 }else{
   message.delete();
   message.channel.send(`Tu est actuelement dans <#${message.channel.id}> ${message.author}, essaye de le faire dans le bon salon`)
@@ -97,7 +100,8 @@ message.channel.send(`:x: Impossible de trouver la personne ${message.author} :x
   .catch();
 }
 
-}else
+}
+else
 {
   return;
 }
