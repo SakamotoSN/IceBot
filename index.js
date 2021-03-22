@@ -44,7 +44,7 @@ bot.on('message', message => {
     if(message.mentions.users.first()){
      if (message.attachments.size > 0) {
       message.delete()
-      message.channel.send(":x: Impossible d'envoyer un fichier avec le message :x:")
+      message.channel.send(`:x: Impossible d'envoyer un fichier avec le message ${message.author.username} :x:`)
       .then(message => {
         message.delete({ timeout: 10000 /*temps en MS*/});
       })
@@ -59,6 +59,14 @@ bot.on('message', message => {
     } else { 
     let messageToSend = message.content.split(" ").slice(2).join(" ");
     let userToSend = message.mentions.users.first();
+    if((messageToSend) > 1800){ 
+      message.channel.send(`:x: Le message est trop long ${message.author.username} :x:`)
+      .then(message => {
+        message.delete({ timeout: 10000 /*temps en MS*/});
+      })
+      .catch();
+
+    }else{
     userToSend.send(`🧊 ${message.author.username} vous à envoyer un message! 🧊\n\n${messageToSend}`);
     message.delete();
     message.channel.send(`**${message.author}** , votre message a bien été envoyer à **${message.mentions.users.first().username}**`)
@@ -67,11 +75,12 @@ setTimeout(() => {
   // Removes the user from the set after a minute
   talkedRecently.delete(message.author.id);
 }, 120000);
-    }   
+    }
+  }   
   }
   }else{
 message.delete()
-message.channel.send(":x: Impossible de trouver la personne :x:")
+message.channel.send(`:x: Impossible de trouver la personne ${message.author.username} :x:`)
 .then(message => {
   message.delete({ timeout: 10000 /*temps en MS*/});
 })
