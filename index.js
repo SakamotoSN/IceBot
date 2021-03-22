@@ -35,7 +35,7 @@ bot.on('message', message => {
 
 
 
-  if(message.content.startsWith('!MP')) {
+  if(message.content.startsWith('!mp')) {
 
     if (message.channel.id === '490465700519870474') {
 
