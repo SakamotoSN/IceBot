@@ -44,14 +44,14 @@ bot.on('message', message => {
     if(message.mentions.users.first()){
      if (message.attachments.size > 0) {
       message.delete()
-      message.channel.send(`:x: Impossible d'envoyer un fichier avec le message ${message.author.username} :x:`)
+      message.channel.send(`:x: Impossible d'envoyer un fichier avec le message ${message.author} :x:`)
       .then(message => {
         message.delete({ timeout: 10000 /*temps en MS*/});
       })
       .catch();
      }else{
       if (talkedRecently.has(message.author.id)) {
-        message.channel.send(`Attent un peu avant d'envoyer des MP ${message.author.username}, le temps a atendre est de 2 minutes apres la commande`)
+        message.channel.send(`Attent un peu avant d'envoyer des MP ${message.author}, le temps a atendre est de 2 minutes apres la commande`)
         .then(message => {
           message.delete({ timeout: 10000 /*temps en MS*/});
         })
@@ -60,7 +60,7 @@ bot.on('message', message => {
     let messageToSend = message.content.split(" ").slice(2).join(" ");
     let userToSend = message.mentions.users.first();
     if((messageToSend) > 1800){ 
-      message.channel.send(`:x: Le message est trop long ${message.author.username} :x:`)
+      message.channel.send(`:x: Le message est trop long ${message.author} :x:`)
       .then(message => {
         message.delete({ timeout: 10000 /*temps en MS*/});
       })
