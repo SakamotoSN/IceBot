@@ -35,7 +35,11 @@ bot.on('message', message => {
 
 
 
-  if(message.content.startsWith('!nnno')) {
+  if(message.content.startsWith('!icebot-MP')) {
+
+
+
+
 
     if(message.mentions.users.first()){
      if (message.attachments.size > 0) {
@@ -47,7 +51,11 @@ bot.on('message', message => {
       .catch();
      }else{
       if (talkedRecently.has(message.author.id)) {
-        message.channel.send("Wait 1 minute before getting typing this again. - " + message.author);
+        message.channel.send(`Attent un peu avant d'envoyer des MP ${message.author.username}, le temps a atendre est de 2 minutes apres la commande`)
+        .then(message => {
+          message.delete({ timeout: 10000 /*temps en MS*/});
+        })
+        .catch();
     } else { 
     let messageToSend = message.content.split(" ").slice(2).join(" ");
     let userToSend = message.mentions.users.first();
@@ -58,7 +66,7 @@ bot.on('message', message => {
 setTimeout(() => {
   // Removes the user from the set after a minute
   talkedRecently.delete(message.author.id);
-}, 60000);
+}, 120000);
     }   
   }
   }else{
