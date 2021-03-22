@@ -62,7 +62,7 @@ bot.on('message', message => {
     if((messageToSend.length) > 1800){ 
       message.delete();
 
-      message.channel.send(`:x: Le message est trop long ${message.author} (${messageToSend.length} charactere, tu ecrit une mini fanfic ? :Kappa: ):x:`)
+      message.channel.send(`:x: Le message est trop long ${message.author} (${messageToSend.length} charactere, tu ecrit une mini fanfic ? :KAPPA: ):x:`)
       .then(message => {
         message.delete({ timeout: 10000 /*temps en MS*/});
       })
