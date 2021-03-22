@@ -48,7 +48,7 @@ bot.on('message', message => {
   if(message.content.startsWith('!ice-bot-MP')) {
 
     if(message.mentions.users.first()){
-     if (Message.attachments.size > 0) {
+     if (message.attachments.size > 0) {
       message.delete()
       message.channel.send(":x: Impossible d'envoyer un fichier avec le message :x:")
       .then(message => {
