@@ -1,128 +1,27 @@
 const Discord = require('discord.js');
 const bot = new Discord.Client();
-
 var OP = "234368202379886593 305758596971626498 330676716676710400 435125705907503105 424677919512723466 773582054880182282 434070408501919745 434070408501919745 371653593473744896"
-
 function random(min, max) {
     min = Math.ceil(0)// 0 est impossible a avoir !ice-bot
     max = Math.floor(100)
     RNG = Math.floor(Math.random() * (max - min +1) + min);
  }
-
 function aléa1(min, max) {
     min = Math.ceil(0)
     max = Math.floor(3)
     alé1 = Math.floor(Math.random() * (max - min +1) + min);
  }
-
-
-
 var nom = ("Ice-Bot")      //speudo
 var jeu = ("Smash Ultimate")//jeu
 var OnOff = false
-
-
-
-
-
 bot.on('ready', function() {
     bot.user.setUsername(nom)
     bot.user.setActivity(jeu)
     console.log("Connected")});
-
 bot.login(process.env.TOKEN);
-
-
-
-
-
-
-
-
-
 bot.on('message', message => {
 
 
-  let msgTimestamp = [];
-  if(message.content.startsWith('!nnno')) {
-      if(typeof msgTimestamp[0] !== "undefined") {
-          if(msgTimestamp[0] + 5000 < Date.now()) {
-
-
-
-
-
-            if(message.mentions.users.first()){
-              if (message.attachments.size > 0) {
-               message.delete()
-               message.channel.send(":x: Impossible d'envoyer un fichier avec le message :x:")
-               .then(message => {
-                 message.delete({ timeout: 10000 /*temps en MS*/});
-               })
-               .catch();
-         
-              }else{ 
-             let messageToSend = message.content.split(" ").slice(2).join(" ");
-             let userToSend = message.mentions.users.first();
-         
-             userToSend.send(`🧊 ${message.author.username} vous à envoyer un message! 🧊\n\n${messageToSend}`);
-             message.delete();
-             message.channel.send(`**${message.author}** , votre message a bien été envoyer à **${message.mentions.users.first().username}**`)
-              }
-         
-           }else{
-         message.delete()
-         message.channel.send(":x: Impossible de trouver la personne :x:")
-         .then(message => {
-           message.delete({ timeout: 10000 /*temps en MS*/});
-         })
-         .catch();
-         
-         }
-
-
-
-
-              msgTimestamp = [];
-          } else {
-              message.channel.send("ATT !");
-          }
-      } else {
-          msgTimestamp.push(Date.now());
-            if(message.mentions.users.first()){
-              if (message.attachments.size > 0) {
-               message.delete()
-               message.channel.send(":x: Impossible d'envoyer un fichier avec le message :x:")
-               .then(message => {
-                 message.delete({ timeout: 10000 /*temps en MS*/});
-               })
-               .catch();
-         
-              }else{ 
-             let messageToSend = message.content.split(" ").slice(2).join(" ");
-             let userToSend = message.mentions.users.first();
-         
-             userToSend.send(`🧊 ${message.author.username} vous à envoyer un message! 🧊\n\n${messageToSend}`);
-             message.delete();
-             message.channel.send(`**${message.author}** , votre message a bien été envoyer à **${message.mentions.users.first().username}**`)
-              }
-         
-           }else{
-         message.delete()
-         message.channel.send(":x: Impossible de trouver la personne :x:")
-         .then(message => {
-           message.delete({ timeout: 10000 /*temps en MS*/});
-         })
-         .catch();
-         
-         }
-      }
-  }
-
-
-
-
-  
 
   if(message.content.startsWith('!nnno')) {
 
@@ -134,16 +33,13 @@ bot.on('message', message => {
         message.delete({ timeout: 10000 /*temps en MS*/});
       })
       .catch();
-
      }else{ 
     let messageToSend = message.content.split(" ").slice(2).join(" ");
     let userToSend = message.mentions.users.first();
-
     userToSend.send(`🧊 ${message.author.username} vous à envoyer un message! 🧊\n\n${messageToSend}`);
     message.delete();
     message.channel.send(`**${message.author}** , votre message a bien été envoyer à **${message.mentions.users.first().username}**`)
      }
-
   }else{
 message.delete()
 message.channel.send(":x: Impossible de trouver la personne :x:")
@@ -151,16 +47,8 @@ message.channel.send(":x: Impossible de trouver la personne :x:")
   message.delete({ timeout: 10000 /*temps en MS*/});
 })
 .catch();
-
 }
 }
-
-
-
-
-
-
-
   //debut AFM
   if(message.content === "Quoiffeurbot On"){
     if(OP.includes(message.author.id) ){
@@ -253,8 +141,6 @@ message.channel.send(":x: Impossible de trouver la personne :x:")
             })
           }
         }
-
-
           if ( (texte.toLowerCase()).includes("ouais", (texte.length-5) ) ||  (texte.toLowerCase()).includes("ouais.", (texte.length-6) ) ||  (texte.toLowerCase()).includes("ouais?", (texte.length-6) )||  (texte.toLowerCase()).includes("ouais!", (texte.length-6) )   ||      (texte.toLowerCase()).includes("ouai", (texte.length-4) ) ||  (texte.toLowerCase()).includes("ouai.", (texte.length-5) ) ||  (texte.toLowerCase()).includes("ouai?", (texte.length-5) )||  (texte.toLowerCase()).includes("ouai!", (texte.length-5) )   ||   (texte.toLowerCase()).includes("oe", (texte.length-2) ) ||  (texte.toLowerCase()).includes("oe.", (texte.length-3) ) ||  (texte.toLowerCase()).includes("oe?", (texte.length-3) )||  (texte.toLowerCase()).includes("oe!", (texte.length-3) )  ){
             if (message.content.length > 200){
               message.channel.send(`"Pour éviter de flood le salon nous avons decider de ne pas citer le message, merci de votre compréhension"\n${message.author}`, {
@@ -273,30 +159,9 @@ message.channel.send(":x: Impossible de trouver la personne :x:")
           }
         }
             
-
-
-
-
-
-
-
-
-
           else{//console.log("OFF") 
   return;}
   //fin AFM
-
-
-
-
-
-
-
-
-
-
-
-
 if(message.content.startsWith("!ice-bot meme")){
 message.channel.send(`Je ne parviens pas à trouver ta merde, précise mieux ${message.author}`)
 }
@@ -304,7 +169,6 @@ if(message.content.startsWith("!ice bot")){
     message.channel.send(`T'as oublié le - dans la commande batard`)
     }
     
-
 if(message.content.startsWith("!ice-bot search")){
     function random(min, max) {
         min = Math.ceil(0)// 0 est impossible a avoir
@@ -321,19 +185,12 @@ if(message.content.startsWith("!ice-bot search")){
     message.channel.send(`Tien BG : https://www.google.fr`)   
 }
 }
-
-
-
-
 if(message.content.startsWith("!ice-bot play")){
 message.channel.send(`Je ne parviens pas à trouver ta merde, précise mieux ${message.author}`)
 } 
-
 if(message.content.startsWith("!ice-bot hello")){
 message.channel.send("Bonjour, je suis un bot")
 }
-
-
 if(message.content.startsWith("!IBS")){
     if("234368202379886593 330676716676710400 396423644794060800 394603568373694474 305758596971626498 434070408501919745".includes(message.author.id)){
     let args = message.content.split(" ").slice(1)
@@ -345,18 +202,11 @@ if(message.content.startsWith("!IBS")){
     message.delete();
 }
 }
-
-
-
-
-
 if(message.content.startsWith("!(S)MP")) {
     if("234368202379886593".includes(message.author.id)){
     if(message.mentions.users.first()){
-
     let messageToSend = message.content.split(" ").slice(2).join(" ");
     let userToSend = message.mentions.users.first();
-
     userToSend.send(`${messageToSend}`);
     message.delete();
 }else{
@@ -366,9 +216,6 @@ message.delete();
     console.log("WII")
     }
 }
-
-
-
 if(message.content === "!ice-bot help"){ //help
  
     const embed = new Discord.MessageEmbed()
@@ -381,13 +228,11 @@ if(message.content === "!ice-bot help"){ //help
      .setThumbnail("https://cdn.glitch.com/df793cf6-f71f-4846-9616-877b6c1bd870%2Fpdp.jpg?v=1590321784039")
     message.channel.send({embed});
 }
-
 if(message.content === "!ice-bot eurobeat"){ 
     message.channel.send({ 
       files: ["https://cdn.glitch.com/df793cf6-f71f-4846-9616-877b6c1bd870%2Feuro.jpg?v=1590321756166"]
   })
 }
-
 if(message.content === "!ice-bot anime"){ 
     message.channel.send("Rentres dans ce trou, s'il te plaît.", {
     files: ["https://cdn.glitch.com/df793cf6-f71f-4846-9616-877b6c1bd870%2Fhole.gif?v=1590321840080"]
@@ -450,8 +295,6 @@ if(message.content === "!ice-bot Funny"){
 })
 }
   
-
-
   
   
 }
