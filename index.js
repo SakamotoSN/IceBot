@@ -57,7 +57,7 @@ bot.on('message', message => {
     message.delete();
     message.channel.send(`**${message.author}** , votre message a bien été envoyer a **${message.mentions.users.first().username}**`)
 }else{
-message.delete(author.message)
+message.delete(message)
 message.channel.send("error personne")
 .then(message => {
   message.delete({ timeout: 20000 /*temps en MS*/});
