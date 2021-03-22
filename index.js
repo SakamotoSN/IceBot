@@ -1,3 +1,4 @@
+const talkedRecently = new Set();
 const Discord = require('discord.js');
 const bot = new Discord.Client();
 var OP = "234368202379886593 305758596971626498 330676716676710400 435125705907503105 424677919512723466 773582054880182282 434070408501919745 434070408501919745 371653593473744896"
@@ -23,6 +24,17 @@ bot.on('message', message => {
 
 
 
+
+
+
+  
+
+
+  
+
+
+
+
   if(message.content.startsWith('!nnno')) {
 
     if(message.mentions.users.first()){
@@ -33,13 +45,22 @@ bot.on('message', message => {
         message.delete({ timeout: 10000 /*temps en MS*/});
       })
       .catch();
-     }else{ 
+     }else{
+      if (talkedRecently.has(msg.author.id)) {
+        msg.channel.send("Wait 1 minute before getting typing this again. - " + msg.author);
+    } else { 
     let messageToSend = message.content.split(" ").slice(2).join(" ");
     let userToSend = message.mentions.users.first();
     userToSend.send(`🧊 ${message.author.username} vous à envoyer un message! 🧊\n\n${messageToSend}`);
     message.delete();
     message.channel.send(`**${message.author}** , votre message a bien été envoyer à **${message.mentions.users.first().username}**`)
-     }
+    talkedRecently.add(msg.author.id);
+setTimeout(() => {
+  // Removes the user from the set after a minute
+  talkedRecently.delete(msg.author.id);
+}, 60000);
+    }   
+  }
   }else{
 message.delete()
 message.channel.send(":x: Impossible de trouver la personne :x:")
@@ -49,6 +70,14 @@ message.channel.send(":x: Impossible de trouver la personne :x:")
 .catch();
 }
 }
+
+
+
+
+
+
+
+
   //debut AFM
   if(message.content === "Quoiffeurbot On"){
     if(OP.includes(message.author.id) ){
