@@ -60,7 +60,7 @@ bot.on('message', message => {
     let messageToSend = message.content.split(" ").slice(2).join(" ");
     let userToSend = message.mentions.users.first();
     if((messageToSend.length) > 1800){ 
-      message.delete()
+      message.delete();
 
       message.channel.send(`:x: Le message est trop long ${message.author} (${messageToSend.length} charactere, tu ecrit une mini fanfic ? :Kappa: ):x:`)
       .then(message => {
