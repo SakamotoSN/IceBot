@@ -54,10 +54,10 @@ bot.on('message', message => {
     userToSend.send(`🧊 ${message.author.username} vous à envoyer un message! 🧊\n\n${messageToSend}`);
     message.delete();
     message.channel.send(`**${message.author}** , votre message a bien été envoyer à **${message.mentions.users.first().username}**`)
-    talkedRecently.add(msg.author.id);
+    talkedRecently.add(message.author.id);
 setTimeout(() => {
   // Removes the user from the set after a minute
-  talkedRecently.delete(msg.author.id);
+  talkedRecently.delete(message.author.id);
 }, 60000);
     }   
   }
