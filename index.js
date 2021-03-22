@@ -1,18 +1,7 @@
   
 const Discord = require('discord.js');
 const bot = new Discord.Client();
-const low = require('lowdb')
-const FileSync = require('lowdb/adapters/FileSync')
-const client = new Discord.Client();
-const Util = require ('discord.js')
-const fs = require('fs')
-let active = new Map()
-const ytdl = require('ytdl-core')
-const queue = new Map();
-const Youtube = require('simple-youtube-api')
-const YTKEY =process.env.YTAPI
-const thereisasong = false
-const youtube = new Youtube(YTKEY)
+
 var OP = "234368202379886593 305758596971626498 330676716676710400 435125705907503105 424677919512723466 773582054880182282 434070408501919745 434070408501919745 371653593473744896"
 
 function random(min, max) {
@@ -28,16 +17,9 @@ function aléa1(min, max) {
  }
 
 
-var party_launch = false;
-var number_random = 0;
+
 var nom = ("Ice-Bot")      //speudo
-var prefix = ("!ice-bot")//prefix
 var jeu = ("Smash Ultimate")//jeu
-var prefixM = ("!MP")//prefix bot
-var aléa_random = 0
-var plus_petit = -2
-var plus_grand = -1
-var tentative = 0
 var OnOff = false
 
 
@@ -60,42 +42,6 @@ bot.login(process.env.TOKEN);
 
 
 bot.on('message', message => {
-
-
-if(message.content.startsWith('!savaetrelobgzebiUwU')) {
-
-    if(message.mentions.users.first()){
-
-    let messageToSend = message.content.split(" ").slice(2).join(" ");
-    let userToSend = message.mentions.users.first();
-
-    userToSend.send(`🧊 ${message.author.username} vous a envoyer un message! 🧊\n\n${messageToSend}`);
-    message.delete();
-    message.channel.send(`**${message.author}** , votre message a bien été envoyer a **${message.mentions.users.first().username}**`)
-}else{
-message.delete();
-message.channel.send(`erreur`)
-
-}
-}
-
-
-
-
-
-if(message.content.startsWith("!IBS")){
-    if("234368202379886593 330676716676710400 396423644794060800 394603568373694474 305758596971626498 434070408501919745".includes(message.author.id)){
-    let args = message.content.split(" ").slice(1)
-    let thingToEcho = args.join(" ")
-    message.delete();
-    message.channel.send(`${thingToEcho}`)  
-}else{
-    
-    message.delete();
-}
-}
-
-
 
 
 
@@ -264,7 +210,33 @@ message.channel.send("Bonjour, je suis un bot")
 }
 
 
+if(message.content.startsWith("!IBS")){
+    if("234368202379886593 330676716676710400 396423644794060800 394603568373694474 305758596971626498 434070408501919745".includes(message.author.id)){
+    let args = message.content.split(" ").slice(1)
+    let thingToEcho = args.join(" ")
+    message.delete();
+    message.channel.send(`${thingToEcho}`)  
+}else{
+    
+    message.delete();
+}
+}
+if(message.content.startsWith('!ice-bot-MP')) {
 
+    if(message.mentions.users.first()){
+
+    let messageToSend = message.content.split(" ").slice(2).join(" ");
+    let userToSend = message.mentions.users.first();
+
+    userToSend.send(`🧊 ${message.author.username} vous a envoyer un message! 🧊\n\n${messageToSend}`);
+    message.delete();
+    message.channel.send(`**${message.author}** , votre message a bien été envoyer a **${message.mentions.users.first().username}**`)
+}else{
+message.delete();
+message.channel.send(`erreur`)
+
+}
+}
 
 
 
