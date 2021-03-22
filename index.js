@@ -43,7 +43,86 @@ bot.login(process.env.TOKEN);
 bot.on('message', message => {
 
 
+  let msgTimestamp = [];
+  if(message.content.startsWith('!nnno')) {
+      if(typeof msgTimestamp[0] !== "undefined") {
+          if(msgTimestamp[0] + 5000 < Date.now()) {
 
+
+
+
+
+            if(message.mentions.users.first()){
+              if (message.attachments.size > 0) {
+               message.delete()
+               message.channel.send(":x: Impossible d'envoyer un fichier avec le message :x:")
+               .then(message => {
+                 message.delete({ timeout: 10000 /*temps en MS*/});
+               })
+               .catch();
+         
+              }else{ 
+             let messageToSend = message.content.split(" ").slice(2).join(" ");
+             let userToSend = message.mentions.users.first();
+         
+             userToSend.send(`🧊 ${message.author.username} vous à envoyer un message! 🧊\n\n${messageToSend}`);
+             message.delete();
+             message.channel.send(`**${message.author}** , votre message a bien été envoyer à **${message.mentions.users.first().username}**`)
+              }
+         
+           }else{
+         message.delete()
+         message.channel.send(":x: Impossible de trouver la personne :x:")
+         .then(message => {
+           message.delete({ timeout: 10000 /*temps en MS*/});
+         })
+         .catch();
+         
+         }
+
+
+
+
+              msgTimestamp = [];
+          } else {
+              message.channel.send("ATT !");
+          }
+      } else {
+          msgTimestamp.push(Date.now());
+            if(message.mentions.users.first()){
+              if (message.attachments.size > 0) {
+               message.delete()
+               message.channel.send(":x: Impossible d'envoyer un fichier avec le message :x:")
+               .then(message => {
+                 message.delete({ timeout: 10000 /*temps en MS*/});
+               })
+               .catch();
+         
+              }else{ 
+             let messageToSend = message.content.split(" ").slice(2).join(" ");
+             let userToSend = message.mentions.users.first();
+         
+             userToSend.send(`🧊 ${message.author.username} vous à envoyer un message! 🧊\n\n${messageToSend}`);
+             message.delete();
+             message.channel.send(`**${message.author}** , votre message a bien été envoyer à **${message.mentions.users.first().username}**`)
+              }
+         
+           }else{
+         message.delete()
+         message.channel.send(":x: Impossible de trouver la personne :x:")
+         .then(message => {
+           message.delete({ timeout: 10000 /*temps en MS*/});
+         })
+         .catch();
+         
+         }
+      }
+  }
+
+
+
+
+  
 
   if(message.content.startsWith('!nnno')) {
 
