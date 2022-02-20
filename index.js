@@ -65,7 +65,7 @@ bot.on('message', message => {
 
 
 
-  if(message.content.startsWith.toLowerCase() === (prefix + ("wtf"))){
+  if(message.content.startsWith(prefix + ("wtf").toLowerCase() )){
 
     if (message.channel.id === '715969826551627897') {
 
