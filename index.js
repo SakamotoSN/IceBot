@@ -50,30 +50,12 @@ fs.createReadStream('./folder/Dekuali.csv')
 bot.on('message', message => {
 
 
-  if(message.content.toLowerCase() === (prefix + "say")){
-    if("234368202379886593 330676716676710400 396423644794060800 394603568373694474 305758596971626498 434070408501919745".includes(message.author.id)){
-    let args = message.content.split(" ").slice(1)
-    let thingToEcho = args.join(" ")
-    message.delete();
-    if (message.content === null){
-      message.delete();
-    }else{
-      message.channel.send(`${thingToEcho}`) 
-    }   
-}else{
-    
-    message.delete();
-}
-}
-
 
 
 
   if(message.content.startsWith(prefix + ("wtf").toLowerCase() )){
 
     if (message.channel.id === '715969826551627897') {
-
-
 
     function random(min, max) {
       min = Math.ceil(0)
@@ -103,14 +85,7 @@ console.log(rdm)
 	.setFooter(date + " || " + ID);
 
   message.channel.send(embed)
-}else{
-  message.delete();
-  message.channel.send(`Tu est actuelement dans <#${message.channel.id}> ${message.author}, essaye de le faire dans le bon salon`)
-  .then(message => {
-    message.delete({ timeout: 10000 /*temps en MS*/});
-  })
-  .catch();
-  }
+}
 }
 
 
@@ -120,7 +95,21 @@ console.log(rdm)
     
     
     
-
+//   if(message.content.toLowerCase() === (prefix + "say")){
+//     if("234368202379886593 330676716676710400 396423644794060800 394603568373694474 305758596971626498 434070408501919745".includes(message.author.id)){
+//     let args = message.content.split(" ").slice(1)
+//     let thingToEcho = args.join(" ")
+//     message.delete();
+//     if (message.content === null){
+//       message.delete();
+//     }else{
+//       message.channel.send(`${thingToEcho}`) 
+//     }   
+// }else{
+    
+//     message.delete();
+// }
+// }
 
 
 
