@@ -1,17 +1,16 @@
 const talkedRecently = new Set();
 const Discord = require('discord.js');
 const bot = new Discord.Client();
+const { MessageEmbed } = require('discord.js');
+const parse = require('csv-parser');
+const fs = require('fs');
+const csvData = [];
+
+
+
+var csv = [];
 var OP = "234368202379886593 305758596971626498 330676716676710400 435125705907503105 424677919512723466 773582054880182282 434070408501919745 434070408501919745 371653593473744896"
-function random(min, max) {
-    min = Math.ceil(0)// 0 est impossible a avoir !ice-bot
-    max = Math.floor(100)
-    RNG = Math.floor(Math.random() * (max - min +1) + min);
- }
-function aléa1(min, max) {
-    min = Math.ceil(0)
-    max = Math.floor(3)
-    alé1 = Math.floor(Math.random() * (max - min +1) + min);
- }
+var prefix = ","
 var nom = ("Ice-Bot")      //speudo
 var jeu = ("Smash Ultimate")//jeu
 var OnOff = false
@@ -20,11 +19,86 @@ bot.on('ready', function() {
     bot.user.setActivity(jeu)
     console.log("Connected")});
 bot.login(process.env.TOKEN);
+
+
+
+
+
+fs.createReadStream('./folder/Dekuali.csv')
+  .pipe(
+    parse({
+      delimiter: ','
+    })
+  )
+  .on('data', function (dataRow) {
+    csvData.push(dataRow);
+  })
+  .on('end', function () {
+    //console.log("teste");
+    csv = csvData;
+    //console.log(csv);
+  });
+
+
+
+
+
+
+
+
+
 bot.on('message', message => {
 
 
 
-if(message.content.startsWith("!IBS")){
+
+
+  if(message.content.toLowerCase() === (prefix + ("wtf"))){
+
+    if (message.channel.id === '715969826551627897') {
+
+
+
+    function random(min, max) {
+      min = Math.ceil(0)
+      max = Math.floor(csv.length - 1)
+      rdm = Math.floor(Math.random() * (max - min +1) + min);
+   }
+  random();
+console.log(rdm)
+
+  var text = csv[rdm]//mess brute
+
+    
+    let split = JSON.stringify(text).split(`","`);
+
+
+    var ID = JSON.stringify(split[0]).slice('17','-1') 
+    var auteur = JSON.stringify(split[1]).slice('12','-1')
+    var date = JSON.stringify(split[2]).slice('10','-1')
+    var mess = JSON.stringify(split[3]).slice('13','-1')
+    var image = JSON.stringify(split[4]).slice('17','-1')
+
+    const embed = new MessageEmbed()
+	.setColor('#0099ff')
+	.setAuthor('De ' + auteur)
+	.setDescription(((mess.replace(/(?:\\[rn]|[\r\n]+)+/g, "\n")).replace("\\", " ").replaceAll("\\", " ")))
+	.setImage(image)
+	.setFooter(date + " || " + ID);
+
+  message.channel.send(embed)
+}else{
+  message.delete();
+  message.channel.send(`Tu est actuelement dans <#${message.channel.id}> ${message.author}, essaye de le faire dans le bon salon`)
+  .then(message => {
+    message.delete({ timeout: 10000 /*temps en MS*/});
+  })
+  .catch();
+  }
+}
+
+
+if(message.content.toLowerCase() === (prefix + "say")){
     if("234368202379886593 330676716676710400 396423644794060800 394603568373694474 305758596971626498 434070408501919745".includes(message.author.id)){
     let args = message.content.split(" ").slice(1)
     let thingToEcho = args.join(" ")
@@ -38,6 +112,29 @@ if(message.content.startsWith("!IBS")){
 
 
   
+    
+    
+    
+
+
+
+
+
+
+
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
 
 
   
@@ -45,69 +142,69 @@ if(message.content.startsWith("!IBS")){
 
 
 
-  if(message.content.startsWith('!mp')) {
+//   if(message.content.startsWith('!mp')) {
 
-    if (message.channel.id === '715969826551627897') {
+//     if (message.channel.id === '715969826551627897') {
 
 
 
-    if(message.mentions.users.first()){
-     if (message.attachments.size > 0) {
-      message.delete();
-      message.channel.send(`:x: Impossible d'envoyer un fichier avec le message ${message.author} :x:`)
-      .then(message => {
-        message.delete({ timeout: 10000 /*temps en MS*/});
-      })
-      .catch();
-     }else{
-      if (talkedRecently.has(message.author.id)) {
-        message.channel.send(`Attent un peu avant d'envoyer des MP ${message.author}, le temps a atendre est de 2 minutes apres la commande`)
-        .then(message => {
-          message.delete({ timeout: 10000 /*temps en MS*/});
-        })
-        .catch();
-    } else { 
-    let messageToSend = message.content.split(" ").slice(2).join(" ");
-    let userToSend = message.mentions.users.first();
-    if((messageToSend.length) > 1800){ 
-      message.delete();
+//     if(message.mentions.users.first()){
+//      if (message.attachments.size > 0) {
+//       message.delete();
+//       message.channel.send(`:x: Impossible d'envoyer un fichier avec le message ${message.author} :x:`)
+//       .then(message => {
+//         message.delete({ timeout: 10000 /*temps en MS*/});
+//       })
+//       .catch();
+//      }else{
+//       if (talkedRecently.has(message.author.id)) {
+//         message.channel.send(`Attent un peu avant d'envoyer des MP ${message.author}, le temps a atendre est de 2 minutes apres la commande`)
+//         .then(message => {
+//           message.delete({ timeout: 10000 /*temps en MS*/});
+//         })
+//         .catch();
+//     } else { 
+//     let messageToSend = message.content.split(" ").slice(2).join(" ");
+//     let userToSend = message.mentions.users.first();
+//     if((messageToSend.length) > 1800){ 
+//       message.delete();
 
-      message.channel.send(`:x: Le message est trop long ${message.author} (${messageToSend.length} charactere, tu ecrit une mini fanfic ? :KAPPA: ):x:`)
-      .then(message => {
-        message.delete({ timeout: 10000 /*temps en MS*/});
-      })
-      .catch();
+//       message.channel.send(`:x: Le message est trop long ${message.author} (${messageToSend.length} charactere, tu ecrit une mini fanfic ? :KAPPA: ):x:`)
+//       .then(message => {
+//         message.delete({ timeout: 10000 /*temps en MS*/});
+//       })
+//       .catch();
 
-    }else{
-    userToSend.send(`🧊 ${message.author.username} vous à envoyer un message! 🧊\n\n${messageToSend}`);
-    message.delete();
-    message.channel.send(`**${message.author}** , votre message a bien été envoyer à **${message.mentions.users.first().username}**`)
-    talkedRecently.add(message.author.id);
-setTimeout(() => {
-  // Removes the user from the set after a minute
-  talkedRecently.delete(message.author.id);
-}, 120000);
-    }
-  }   
-  }
-  }else{
-message.delete();
-message.channel.send(`:x: Impossible de trouver la personne ${message.author} :x:`)
-.then(message => {
-  message.delete({ timeout: 10000 /*temps en MS*/});
-})
-.catch();
-}
-}else{
-  message.delete();
-  message.channel.send(`Tu est actuelement dans <#${message.channel.id}> ${message.author}, essaye de le faire dans le bon salon`)
-  .then(message => {
-    message.delete({ timeout: 10000 /*temps en MS*/});
-  })
-  .catch();
-}
+//     }else{
+//     userToSend.send(`🧊 ${message.author.username} vous à envoyer un message! 🧊\n\n${messageToSend}`);
+//     message.delete();
+//     message.channel.send(`**${message.author}** , votre message a bien été envoyer à **${message.mentions.users.first().username}**`)
+//     talkedRecently.add(message.author.id);
+// setTimeout(() => {
+//   // Removes the user from the set after a minute
+//   talkedRecently.delete(message.author.id);
+// }, 120000);
+//     }
+//   }   
+//   }
+//   }else{
+// message.delete();
+// message.channel.send(`:x: Impossible de trouver la personne ${message.author} :x:`)
+// .then(message => {
+//   message.delete({ timeout: 10000 /*temps en MS*/});
+// })
+// .catch();
+// }
+// }else{
+//   message.delete();
+//   message.channel.send(`Tu est actuelement dans <#${message.channel.id}> ${message.author}, essaye de le faire dans le bon salon`)
+//   .then(message => {
+//     message.delete({ timeout: 10000 /*temps en MS*/});
+//   })
+//   .catch();
+// }
 
-}
+// }
 
 
 
@@ -229,128 +326,25 @@ message.channel.send(`:x: Impossible de trouver la personne ${message.author} :x
           else{//console.log("OFF") 
   return;}
   //fin AFM
-if(message.content.startsWith("!ice-bot meme")){
-message.channel.send(`Je ne parviens pas à trouver ta merde, précise mieux ${message.author}`)
-}
-if(message.content.startsWith("!ice bot")){
-    message.channel.send(`T'as oublié le - dans la commande batard`)
-    }
     
-if(message.content.startsWith("!ice-bot search")){
-    function random(min, max) {
-        min = Math.ceil(0)// 0 est impossible a avoir
-        max = Math.floor(100)
-        RNG = Math.floor(Math.random() * (max - min +1) + min);
-     }
-    random();
-    console.log(RNG)
-    if (RNG < 80){
-        console.log("RNG normal")
-        message.channel.send(`Je ne parviens pas à trouver ta merde, précise mieux ${message.author}`)
-}else{
-    console.log("RNG google")
-    message.channel.send(`Tien BG : https://www.google.fr`)   
-}
-}
-if(message.content.startsWith("!ice-bot play")){
-message.channel.send(`Je ne parviens pas à trouver ta merde, précise mieux ${message.author}`)
-} 
-if(message.content.startsWith("!ice-bot hello")){
-message.channel.send("Bonjour, je suis un bot")
-}
 
-if(message.content.startsWith("!(S)MP")) {
-    if("234368202379886593".includes(message.author.id)){
-    if(message.mentions.users.first()){
-    let messageToSend = message.content.split(" ").slice(2).join(" ");
-    let userToSend = message.mentions.users.first();
-    userToSend.send(`${messageToSend}`);
-    message.delete();
-}else{
-message.delete();
-}
-}else{
-    console.log("WII")
-    }
-}
-if(message.content === "!ice-bot help"){ //help
- 
-    const embed = new Discord.MessageEmbed()
-    .setTitle("Voici les commandue de Ice-Bot")
-    .setAuthor("Ice-Bot")
-    .setColor(0x00FFF8)
-    .setFooter("Ce bot est principalement un bot troll")
-    .addField("Commande actuel",
-    "!ice-bot meme\n!ice-bot search\n!ice-bot play\n!ice-bot hello\n!ice-bot-MP (envois un message priver a la personne mentionner)\n!ice-bot NotFunny (envois un gif)\n!ice-bot Funny (envois un gif)")
-     .setThumbnail("https://cdn.glitch.com/df793cf6-f71f-4846-9616-877b6c1bd870%2Fpdp.jpg?v=1590321784039")
-    message.channel.send({embed});
-}
-if(message.content === "!ice-bot eurobeat"){ 
-    message.channel.send({ 
-      files: ["https://cdn.glitch.com/df793cf6-f71f-4846-9616-877b6c1bd870%2Feuro.jpg?v=1590321756166"]
-  })
-}
-if(message.content === "!ice-bot anime"){ 
-    message.channel.send("Rentres dans ce trou, s'il te plaît.", {
-    files: ["https://cdn.glitch.com/df793cf6-f71f-4846-9616-877b6c1bd870%2Fhole.gif?v=1590321840080"]
-})
-}
-  
-  
-if(message.content === "!ice-bot GachaLife"){ 
-    message.channel.send({ 
-      files: ["https://cdn.glitch.com/df793cf6-f71f-4846-9616-877b6c1bd870%2FPicsArt_05-25-12.59.15.png?v=1590434060648"]
-  })
-}
-if(message.content === "!ice-bot NotFunny"){ 
-    message.channel.send({ 
-      files: ["https://cdn.glitch.com/df793cf6-f71f-4846-9616-877b6c1bd870%2FFeistyHeftyAmericanbobtail-max-1mb.gif?v=1590688129485"]
-  })
-}
-  
-  
-  
-  
-if(message.content === "!ice-bot Funny"){
-  
-  
-  if("543925622741663766".includes(message.author.id)){ //oyi
-   console.log('nan') 
-  }else{
-      if("394603568373694474".includes(message.author.id)){ //ice
-    message.channel.send({ 
-      files: ["https://cdn.glitch.com/df793cf6-f71f-4846-9616-877b6c1bd870%2FIMG_20191213_141543.png?v=1590770559545"]
-  })
-                console.log('ice !') 
-}else{
-  function random1(min, max) {
-    min = Math.ceil(1)
-    max = Math.floor(2)
-    random2 = Math.floor(Math.random() * (max - min +1) + min);
- }
-  random1();
-    console.log(random2)
-  if (random2 == 1){
-    message.channel.send({ 
-      files: ["https://cdn.glitch.com/df793cf6-f71f-4846-9616-877b6c1bd870%2F20200529_155849.gif?v=1590768423865"]
-  })
-  
-}else{
-  if (random2 == 2){
-    message.channel.send({ 
-      files: ["https://cdn.glitch.com/df793cf6-f71f-4846-9616-877b6c1bd870%2Ffunny.gif?v=1590770443035"]
-  })
-}
-}
-}    
-}
-}
- 
-  if(message.content === "!ice-bot Furry"){ 
-    message.channel.send("Dans la série LazyTwon Saison 2 épisodes 15, Robbie Rotten (connu pour le meme We Are N°1) se crée un costume de furry pour luide furry pour lui même", {
-    files: ["https://cdn.glitch.com/df793cf6-f71f-4846-9616-877b6c1bd870%2FWhat.png?v=1591100936037"]
-})
-}
+// if(message.content.startsWith("!(S)MP")) {
+//     if("234368202379886593".includes(message.author.id)){
+//     if(message.mentions.users.first()){
+//     let messageToSend = message.content.split(" ").slice(2).join(" ");
+//     let userToSend = message.mentions.users.first();
+//     userToSend.send(`${messageToSend}`);
+//     message.delete();
+// }else{
+// message.delete();
+// }
+// }else{
+//     console.log("WII")
+//     }
+// }
+
+
+
   
   
   
