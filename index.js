@@ -55,10 +55,10 @@ bot.on('message', message => {
     let args = message.content.split(" ").slice(1)
     let thingToEcho = args.join(" ")
     message.delete();
-    if (message.content != null){
-      message.channel.send(`${thingToEcho}`) 
-    }else{
+    if (message.content === null){
       message.delete();
+    }else{
+      message.channel.send(`${thingToEcho}`) 
     }   
 }else{
     
