@@ -53,7 +53,7 @@ bot.on('message', message => {
 
 
 
-  if(message.content.startsWith(prefix + (("wtf").toLowerCase()) )){
+  if(message.content.toLowerCase().startsWith(prefix + ("wtf"))){
 
     if (message.channel.id === '715969826551627897'|| '490465700519870474') {
     function random(min, max) {
