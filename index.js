@@ -88,7 +88,7 @@ if (args >= 1 && args <= (csv.length) ){ //verif si nombre, sinon random
     var date = JSON.stringify(split[2]).slice('10','-1')
     var mess = JSON.stringify(split[3]).slice('13','-1')
     var image = JSON.stringify(split[4]).slice('17','-1')
-    var react = JSON.stringify(split[5]).slice( '14','-4')
+    var react = JSON.stringify(split[5]).slice( '15','-4')
 
     const embed = new MessageEmbed()
 	.setColor('#0099ff')
@@ -118,7 +118,7 @@ if(message.content.toLowerCase().startsWith(prefix + ("info wtf").toLowerCase())
 )
 
   message.channel.send(embed)
-  console.log(fs.statSync('./folder/Dekuali.csv'))
+  console.log(fs.statSync('./folder/Dekuali.csv').mtime)
 }
 
 
