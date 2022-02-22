@@ -71,7 +71,7 @@ if (args >= 1 && args <= (csv.length) ){ //verif si nombre, sinon random
 
 
   var text = csv[parseInt(args[0])-1]
-  num = csv[parseInt(args[0])-1]
+  num = args[0]
 }else{
   rdm = Math.floor(Math.random() * csv.length);
   var text = csv[rdm]
@@ -113,8 +113,8 @@ if(message.content.toLowerCase().startsWith(prefix + ("info wtf").toLowerCase())
 	.setColor('#0099ff')
 	.setDescription(`info sur la commande "wtf"`)
   .addFields(
-    { name: "Nombre d'utilisation", value: stats_wtf },
-    { name: "Derniere update des message", value: (fs.statSync('./folder/Dekuali.csv').mtime).slice( '0','0') + " à " + (fs.statSync('./folder/Dekuali.csv').mtime).slice( '0','0')}
+    { name: "Nombre d'utilisation", value: stats_wtf, inline: true},
+    { name: "Derniere update des message", value: (fs.statSync('./folder/Dekuali.csv').mtime) + " à " + (fs.statSync('./folder/Dekuali.csv').mtime), inline: true}
 )
 
   message.channel.send(embed)
