@@ -99,7 +99,7 @@ if (args > 1 && args < (csv.length - 1) ){ //verif si nombre, sinon random
     {name: '\u200B', value: (((mess.replace(/(?:\\[rn]|[\r\n]+)+/g, "\n")).replace("\\", "").replaceAll("\\", "")))},
   )
   .addFields(
-    {value: '\u200B'}
+    {name: "le "+ date , value: '\u200B'}
   )
 	.setImage(image)
 	.setFooter(date + ' || ' + num +  ' || '+ ID);
@@ -122,7 +122,7 @@ if(message.content.toLowerCase().startsWith(prefix + ("info wtf").toLowerCase())
 )
 
   message.channel.send(embed)
-  console.log(fs.statSync('./folder/Dekuali.csv'))
+  console.log(fs.statSync('./folder/Dekuali.csv')[19])
 }
 
 
