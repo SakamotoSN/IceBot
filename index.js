@@ -54,7 +54,6 @@ fs.createReadStream('./folder/Dekuali.csv')
 
 
 bot.on('message', message => {
-  console.log(csv.length)
 
   if(message.content.toLowerCase().startsWith(prefix + ("wtf"))){
 
@@ -64,8 +63,8 @@ bot.on('message', message => {
 
     function random(min, max) {
       min = Math.ceil(0)
-      max = Math.floor(csv.length)
-      rdm = Math.floor(Math.random() * (max - min +1) + min);
+      max = Math.floor(1)//csv.length
+      rdm = Math.floor(Math.random() * (max - min) + min);
    }
 
 
@@ -73,9 +72,9 @@ bot.on('message', message => {
    var num //stock numéro mess
 
 
-if (args > 1 && args < (csv.length) ){ //verif si nombre, sinon random
-  var text = csv[args[0]]
-  num = args[0]
+if (args >= 1 && args <= (csv.length) ){ //verif si nombre, sinon random
+  var text = csv[args[0+1]]
+  num = args[0+1]
 }else{
   random();
   var text = csv[rdm]
