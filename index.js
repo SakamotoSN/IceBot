@@ -66,7 +66,7 @@ bot.on('message', message => {
 
 
 
-
+var stats_wtf = 1305; //oeoe update du 22/02/2202
   if(message.content.toLowerCase().startsWith(prefix + ("wtf"))){
 
     if (message.channel.id === '715969826551627897') {
@@ -93,6 +93,8 @@ if (args > 1 && args < (csv.length - 1) ){ //verif si nombre, sinon random
   num = rdm
 }
 
+
+
     let split = JSON.stringify(text).split(`","`);
 
 
@@ -109,11 +111,26 @@ if (args > 1 && args < (csv.length - 1) ){ //verif si nombre, sinon random
 	.setImage(image)
 	.setFooter(date + ' || ' + num +  ' || '+ ID);
   message.channel.send(embed)
+
+
+  stats_wtf = stats_wtf + 1
 }
 }
 
-if (message.content.toLowerCase().startsWith(prefix + ("wtf stats"))){
-message.channel.send("amogus")
+
+if(message.content.toLowerCase().startsWith(prefix + ("info wtf").toLowerCase())){
+
+  const embed = new MessageEmbed()
+	.setColor('#0099ff')
+	.setDescription("info sur la commande ,wtf")
+  .addFields(
+		("Nombre d'utilisation", stats_wtf),
+    ("Derniere update des message", stats.ctime),
+	)
+  message.channel.send(embed)
+
+
+
 }
 
 
