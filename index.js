@@ -91,6 +91,7 @@ if (args > 1 && args < (csv.length - 1) ){ //verif si nombre, sinon random
     var date = JSON.stringify(split[2]).slice('10','-1')
     var mess = JSON.stringify(split[3]).slice('13','-1')
     var image = JSON.stringify(split[4]).slice('17','-1')
+    var react = JSON.stringify(split[5])//.slice()
 
     const embed = new MessageEmbed()
 	.setColor('#0099ff')
@@ -99,7 +100,7 @@ if (args > 1 && args < (csv.length - 1) ){ //verif si nombre, sinon random
     {name: '\u200B', value: (((mess.replace(/(?:\\[rn]|[\r\n]+)+/g, "\n")).replace("\\", "").replaceAll("\\", "")))},
   )
   .addFields(
-    {name: "le "+ date , value: '\u200B'}
+    {name: "Reaction" , value: react}
   )
 	.setImage(image)
 	.setFooter(date + ' || ' + num +  ' || '+ ID);
@@ -122,7 +123,7 @@ if(message.content.toLowerCase().startsWith(prefix + ("info wtf").toLowerCase())
 )
 
   message.channel.send(embed)
-  console.log(fs.statSync('./folder/Dekuali.csv')[19])
+  console.log(fs.statSync('./folder/Dekuali.csv')[18])
 }
 
 
