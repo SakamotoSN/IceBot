@@ -67,7 +67,7 @@ bot.on('message', message => {
 
 if (args >= 1 && args <= (csv.length) ){ //verif si nombre, sinon random
   
-  console.log(parseInt(args[0])+1)
+  console.log(   (parseInt(args[0]))+1)
 
 
   var text = csv[parseInt(args[0])-1]
@@ -98,7 +98,7 @@ if (args >= 1 && args <= (csv.length) ){ //verif si nombre, sinon random
     {name: "Reaction" , value: react}
   )
 	.setImage(image)
-	.setFooter(date + ' || ' + stringify(num) +  ' || '+ ID);
+	.setFooter(date + ' || ' + num +  ' || '+ ID);
   message.channel.send(embed)
 
 
