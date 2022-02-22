@@ -4,16 +4,26 @@ const bot = new Discord.Client();
 const { MessageEmbed } = require('discord.js');
 const parse = require('csv-parser');
 const fs = require('fs');
-const csvData = [];
 
 
 
-var csv = [];
+
+//bot
 var OP = "234368202379886593 305758596971626498 330676716676710400 435125705907503105 424677919512723466 773582054880182282 434070408501919745 434070408501919745 371653593473744896"
 var prefix = ","
 var nom = ("Ice-Bot")      //speudo
 var jeu = ("Smash Ultimate")//jeu
 var OnOff = false
+
+
+
+//,wtf
+var csv = [];
+const csvData = [];
+
+
+
+
 bot.on('ready', function() {
     bot.user.setUsername(nom)
     bot.user.setActivity(jeu)
@@ -98,7 +108,7 @@ message.channel.send("YES")
     const embed = new MessageEmbed()
 	.setColor('#0099ff')
 	.setAuthor('De ' + auteur)
-	.setDescription((( "\n \n" + (mess.replace(/(?:\\[rn]|[\r\n]+)+/g, "\n")).replace("\\", "").replaceAll("\\", ""))) + " \n \n")
+	.setDescription((( '\u200B' + (mess.replace(/(?:\\[rn]|[\r\n]+)+/g, "\n")).replace("\\", "").replaceAll("\\", ""))) + '\u200B')
 	.setImage(image)
 	.setFooter(date + ' || ' + num +  ' || '+ ID);
   message.channel.send(embed)
