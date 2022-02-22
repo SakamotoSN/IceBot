@@ -63,7 +63,7 @@ bot.on('message', message => {
 
     function random(min, max) {
       min = Math.ceil(0)
-      max = Math.floor(csv.length - 1)
+      max = Math.floor(csv.length + 1)
       rdm = Math.floor(Math.random() * (max - min +1) + min);
    }
 
@@ -72,7 +72,7 @@ bot.on('message', message => {
    var num //stock numéro mess
 
 
-if (args > 1 && args < (csv.length - 1) ){ //verif si nombre, sinon random
+if (args > 1 && args < (csv.length + 1) ){ //verif si nombre, sinon random
   var text = csv[args[0]]
   num = args[0]
 }else{
@@ -96,9 +96,7 @@ if (args > 1 && args < (csv.length - 1) ){ //verif si nombre, sinon random
     const embed = new MessageEmbed()
 	.setColor('#0099ff')
 	.setAuthor('De ' + auteur)
-  .addFields(
-    {name: '\u200B', value: (((mess.replace(/(?:\\[rn]|[\r\n]+)+/g, "\n")).replace("\\", "").replaceAll("\\", "")))},
-  )
+  .setDescription((((mess.replace(/(?:\\[rn]|[\r\n]+)+/g, "\n")).replace("\\", "").replaceAll("\\", ""))))
   .addFields(
     {name: "Reaction" , value: react}
   )
