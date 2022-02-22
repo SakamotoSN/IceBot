@@ -66,11 +66,12 @@ bot.on('message', message => {
 
 
 if (args >= 1 && args <= (csv.length) ){ //verif si nombre, sinon random
-  console.log(args[0+1])
+  
+  console.log(parseInt(args[0])+1)
 
 
-  var text = csv[args[0]]
-  num = args[0]
+  var text = csv[parseInt(args[0])+1]
+  num = csv[parseInt(args[0])+1]
 }else{
   rdm = Math.floor(Math.random() * csv.length);
   var text = csv[rdm]
@@ -117,7 +118,7 @@ if(message.content.toLowerCase().startsWith(prefix + ("info wtf").toLowerCase())
 )
 
   message.channel.send(embed)
-  console.log(fs.statSync('./folder/Dekuali.csv')[18])
+  console.log(fs.statSync('./folder/Dekuali.csv'))
 }
 
 
