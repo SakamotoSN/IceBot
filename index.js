@@ -77,7 +77,7 @@ if (args > 1 && args < (csv.length - 1) ){ //verif si nombre, sinon random
   random();
   var text = csv[rdm]
 }
-console.log(text)
+console.log(args[0])
 
 
     let split = JSON.stringify(text).split(`","`);
