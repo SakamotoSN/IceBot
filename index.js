@@ -68,7 +68,7 @@ console.log("contien nombre")
 console.log(args[0].stringify())
    }else{
      console.log("pas de nombre")
-     console.log(args[0].stringify())
+     console.log(stringify(args[0]))
    }
 
   
