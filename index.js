@@ -42,7 +42,11 @@ fs.createReadStream('./folder/Dekuali.csv')
 
 
 
-
+  fs.stat('./folder/Dekuali.csv', (err, stats) => {
+    if(err) {
+        throw err;
+    }
+});
 
 
 
@@ -55,7 +59,18 @@ bot.on('message', message => {
 
   if(message.content.toLowerCase().startsWith(prefix + ("wtf"))){
 
-    if (message.channel.id === '490465700519870474') {
+    if (message.channel.id === '715969826551627897') {
+
+    let args = message.content.split(" ").slice(1)
+    
+   if (args[1] > 0){
+console.log("contien nombre")
+   }else{
+     console.log("pas de nombre")
+   }
+
+  
+
     function random(min, max) {
       min = Math.ceil(0)
       max = Math.floor(csv.length - 1)
@@ -94,6 +109,8 @@ bot.on('message', message => {
     
     
     
+
+
 //   if(message.content.toLowerCase() === (prefix + "say")){
 //     if("234368202379886593 330676716676710400 396423644794060800 394603568373694474 305758596971626498 434070408501919745".includes(message.author.id)){
 //     let args = message.content.split(" ").slice(1)
