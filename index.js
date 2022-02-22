@@ -95,7 +95,7 @@ if (args > 1 && args < (csv.length - 1) ){ //verif si nombre, sinon random
     const embed = new MessageEmbed()
 	.setColor('#0099ff')
 	.setAuthor('De ' + auteur)
-	.setDescription((( " \n \n" + (mess.replace(/(?:\\[rn]|[\r\n]+)+/g, "\n")).replace("\\", "").replaceAll("\\", ""))) + " \n \n")
+	.setDescription((( "\u200B \u200B" + (mess.replace(/(?:\\[rn]|[\r\n]+)+/g, "\n")).replace("\\", "").replaceAll("\\", ""))) + " \n \n")
 	.setImage(image)
 	.setFooter(date + ' || ' + num +  ' || '+ ID);
   message.channel.send(embed)
