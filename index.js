@@ -61,13 +61,6 @@ bot.on('message', message => {
 
     let args = message.content.split(" ").slice(1)
 
-    function random(min, max) {
-      min = Math.ceil(0)
-      max = Math.floor(1)//csv.length
-      rdm = Math.floor(Math.random() * (max - min) + min);
-   }
-
-
 
    var num //stock numéro mess
 
@@ -76,7 +69,7 @@ if (args >= 1 && args <= (csv.length) ){ //verif si nombre, sinon random
   var text = csv[args[0+1]]
   num = args[0+1]
 }else{
-  random();
+  rdm = Math.floor(Math.random() * csv.length);
   var text = csv[rdm]
   num = rdm
 }
