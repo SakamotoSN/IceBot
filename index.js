@@ -52,14 +52,6 @@ fs.createReadStream('./folder/Dekuali.csv')
 
 
 
-  fs.stat('./folder/Dekuali.csv', (err, stats) => {
-    if(err) {
-        throw err;
-    }
-});
-
-
-
 
 bot.on('message', message => {
 
@@ -125,7 +117,7 @@ if(message.content.toLowerCase().startsWith(prefix + ("info wtf").toLowerCase())
 	.setDescription("info sur la commande ,wtf")
   .addFields(
 		("Nombre d'utilisation", stats_wtf),
-    ("Derniere update des message", `${stats.mtime}`),
+    ("Derniere update des message", fs.statSync('file.txt')),
 	)
   message.channel.send(embed)
 
