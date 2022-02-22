@@ -96,11 +96,11 @@ if (args > 1 && args < (csv.length - 1) ){ //verif si nombre, sinon random
 	.setColor('#0099ff')
 	.setAuthor('De ' + auteur)
   .addFields(
-    {name: '\u200B', value: ((((mess.replace(/(?:\\[rn]|[\r\n]+)+/g, "\n")).replace("\\", "").replaceAll("\\", ""))) + '\u200B')},
+    {name: '\u200B', value: (((mess.replace(/(?:\\[rn]|[\r\n]+)+/g, "\n")).replace("\\", "").replaceAll("\\", "")))},
   )
   .addFields(
+    {value: '\u200B'}
   )
-	//.setDescription((((mess.replace(/(?:\\[rn]|[\r\n]+)+/g, "\n")).replace("\\", "").replaceAll("\\", ""))) + '\u200B')
 	.setImage(image)
 	.setFooter(date + ' || ' + num +  ' || '+ ID);
   message.channel.send(embed)
