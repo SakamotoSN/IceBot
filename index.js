@@ -20,7 +20,7 @@ var OnOff = false
 //,wtf
 var csv = [];
 const csvData = [];
-
+var stats_wtf = 1305; //oeoe update du 22/02/2202
 
 
 
@@ -55,10 +55,6 @@ fs.createReadStream('./folder/Dekuali.csv')
 
 bot.on('message', message => {
 
-
-
-
-var stats_wtf = 1305; //oeoe update du 22/02/2202
   if(message.content.toLowerCase().startsWith(prefix + ("wtf"))){
 
     if (message.channel.id === '715969826551627897') {
@@ -100,7 +96,6 @@ if (args > 1 && args < (csv.length - 1) ){ //verif si nombre, sinon random
 	.setColor('#0099ff')
 	.setAuthor('De ' + auteur)
   .addFields(
-    {name:'\u200B'},
     {name: '\u200B', value: ((((mess.replace(/(?:\\[rn]|[\r\n]+)+/g, "\n")).replace("\\", "").replaceAll("\\", ""))) + '\u200B')},
     {name:'\u200B', value: '\u200B'}
   )
