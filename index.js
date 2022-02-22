@@ -125,7 +125,7 @@ if(message.content.toLowerCase().startsWith(prefix + ("info wtf").toLowerCase())
 	.setDescription("info sur la commande ,wtf")
   .addFields(
 		("Nombre d'utilisation", stats_wtf),
-    ("Derniere update des message", stats.ctime),
+    ("Derniere update des message", `${stats.mtime}`),
 	)
   message.channel.send(embed)
 
