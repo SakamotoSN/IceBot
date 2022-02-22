@@ -54,6 +54,7 @@ fs.createReadStream('./folder/Dekuali.csv')
 
 
 bot.on('message', message => {
+  console.log(csv.length)
 
   if(message.content.toLowerCase().startsWith(prefix + ("wtf"))){
 
@@ -63,7 +64,7 @@ bot.on('message', message => {
 
     function random(min, max) {
       min = Math.ceil(0)
-      max = Math.floor(csv.length + 1)
+      max = Math.floor(csv.length - 1)
       rdm = Math.floor(Math.random() * (max - min +1) + min);
    }
 
