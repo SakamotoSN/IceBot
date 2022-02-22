@@ -94,7 +94,7 @@ if (args > 1 && args < (csv.length - 1) ){ //verif si nombre, sinon random
 	.setAuthor('De ' + auteur)
 	.setDescription((( "\n\n" + (mess.replace(/(?:\\[rn]|[\r\n]+)+/g, "\n")).replace("\\", "").replaceAll("\\", ""))) + "\n\n")
 	.setImage(image)
-	.setFooter(date + ' || ' + stringify(args[0]) + ' || '+ ID);
+	.setFooter(date + ' || ' + ' || '+ ID); //stringify(args[0]) 
 
   message.channel.send(embed)
 }
