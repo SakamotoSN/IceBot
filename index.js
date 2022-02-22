@@ -71,14 +71,17 @@ bot.on('message', message => {
 
 
 
+   var num //stock numéro mess
+
+
 if (args > 1 && args < (csv.length - 1) ){ //verif si nombre, sinon random
   var text = csv[args[0]]
+  num = args[0]
 }else{
   random();
   var text = csv[rdm]
+  num = rdm
 }
-console.log(args[0])
-
 
     let split = JSON.stringify(text).split(`","`);
 
@@ -94,7 +97,7 @@ console.log(args[0])
 	.setAuthor('De ' + auteur)
 	.setDescription((( " \n \n" + (mess.replace(/(?:\\[rn]|[\r\n]+)+/g, "\n")).replace("\\", "").replaceAll("\\", ""))) + " \n \n")
 	.setImage(image)
-	.setFooter(date + ' || ' + ' || '+ ID);
+	.setFooter(date + ' || ' + num +  ' || '+ ID);
   message.channel.send(embed)
 }
 }
