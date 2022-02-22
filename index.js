@@ -113,8 +113,8 @@ if(message.content.toLowerCase().startsWith(prefix + ("info wtf").toLowerCase())
 	.setColor('#0099ff')
 	.setDescription(`info sur la commande "wtf"`)
   .addFields(
-    { name: "Nombre d'utilisation", value: stats_wtf, inline: true},
-    { name: "Derniere update des message", value: (fs.statSync('./folder/Dekuali.csv').mtime) + " à " + (fs.statSync('./folder/Dekuali.csv').mtime), inline: true}
+    { name: "Nombre d'utilisation", value: stats_wtf},
+    { name: "Derniere update des message", value: (fs.statSync('./folder/Dekuali.csv').mtime).slice('1', '-1') + " à " + (fs.statSync('./folder/Dekuali.csv').mtime).slice('1', '-1')}
 )
 
   message.channel.send(embed)
