@@ -97,7 +97,6 @@ if (args > 1 && args < (csv.length - 1) ){ //verif si nombre, sinon random
 	.setAuthor('De ' + auteur)
   .addFields(
     {name: '\u200B', value: ((((mess.replace(/(?:\\[rn]|[\r\n]+)+/g, "\n")).replace("\\", "").replaceAll("\\", ""))) + '\u200B')},
-    {name:'\u200B', value: '\u200B'}
   )
 	//.setDescription((((mess.replace(/(?:\\[rn]|[\r\n]+)+/g, "\n")).replace("\\", "").replaceAll("\\", ""))) + '\u200B')
 	.setImage(image)
@@ -114,10 +113,10 @@ if(message.content.toLowerCase().startsWith(prefix + ("info wtf").toLowerCase())
 
   const embed = new MessageEmbed()
 	.setColor('#0099ff')
-	.setDescription("info sur la commande ,wtf")
+	.setDescription(`info sur la commande "wtf"`)
   .addFields(
     { name: "Nombre d'utilisation", value: stats_wtf },
-    { name: "Derniere update des message", value: fs.statSync('./folder/Dekuali.csv')}
+    { name: "Derniere update des message", value: stringify(fs.statSync('./folder/Dekuali.csv'))}
 )
 
 
