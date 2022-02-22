@@ -115,14 +115,9 @@ if(message.content.toLowerCase().startsWith(prefix + ("info wtf").toLowerCase())
   const embed = new MessageEmbed()
 	.setColor('#0099ff')
 	.setDescription("info sur la commande ,wtf")
-  .addFields(
-		("Nombre d'utilisation", stats_wtf),
-    ("Derniere update des message", fs.statSync('./folder/Dekuali.csv')),
-	)
+  .addFields("Nombre d'utilisation", stats_wtf)
+  .addFields("Derniere update des message", fs.statSync('./folder/Dekuali.csv'))
   message.channel.send(embed)
-
-
-
 }
 
 
