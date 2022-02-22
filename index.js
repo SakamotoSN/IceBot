@@ -62,28 +62,24 @@ bot.on('message', message => {
     if (message.channel.id === '715969826551627897') {
 
     let args = message.content.split(" ").slice(1)
-    
-   if (args[1] > 0){
-console.log("contien nombre")
-console.log(args[0].stringify())
-   }else{
-     console.log("pas de nombre")
-     console.log(args[0])
-   }
-
-  
 
     function random(min, max) {
       min = Math.ceil(0)
       max = Math.floor(csv.length - 1)
       rdm = Math.floor(Math.random() * (max - min +1) + min);
    }
+
+
+
+if (args > 1 && args < (csv.length - 1) ){ //verif si nombre, sinon random
+  var text = csv[args[0]]
+}else{
   random();
-//console.log(rdm)
+  var text = csv[rdm]
+}
 
-  var text = csv[rdm]//mess brute
 
-    
+
     let split = JSON.stringify(text).split(`","`);
 
 
