@@ -67,7 +67,7 @@ bot.on('message', message => {
 
 if (args >= 1 && args <= (csv.length) ){ //verif si nombre, sinon random
   var text = csv[args[0]]
-  num = args[0]+1
+  num = args[0]
 }else{
   rdm = Math.floor(Math.random() * csv.length);
   var text = csv[rdm]
