@@ -70,8 +70,8 @@ if (args >= 1 && args <= (csv.length) ){ //verif si nombre, sinon random
   console.log(parseInt(args[0])+1)
 
 
-  var text = csv[parseInt(args[0])+1]
-  num = csv[parseInt(args[0])+1]
+  var text = csv[parseInt(args[0])-1]
+  num = csv[parseInt(args[0])-1]
 }else{
   rdm = Math.floor(Math.random() * csv.length);
   var text = csv[rdm]
@@ -98,7 +98,7 @@ if (args >= 1 && args <= (csv.length) ){ //verif si nombre, sinon random
     {name: "Reaction" , value: react}
   )
 	.setImage(image)
-	.setFooter(date + ' || ' + num +  ' || '+ ID);
+	.setFooter(date + ' || ' + stringify(num) +  ' || '+ ID);
   message.channel.send(embed)
 
 
