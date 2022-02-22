@@ -98,6 +98,8 @@ if (args > 1 && args < (csv.length - 1) ){ //verif si nombre, sinon random
   .addFields(
     {name: '\u200B', value: ((((mess.replace(/(?:\\[rn]|[\r\n]+)+/g, "\n")).replace("\\", "").replaceAll("\\", ""))) + '\u200B')},
   )
+  .addFields(
+  )
 	//.setDescription((((mess.replace(/(?:\\[rn]|[\r\n]+)+/g, "\n")).replace("\\", "").replaceAll("\\", ""))) + '\u200B')
 	.setImage(image)
 	.setFooter(date + ' || ' + num +  ' || '+ ID);
@@ -116,11 +118,11 @@ if(message.content.toLowerCase().startsWith(prefix + ("info wtf").toLowerCase())
 	.setDescription(`info sur la commande "wtf"`)
   .addFields(
     { name: "Nombre d'utilisation", value: stats_wtf },
-    { name: "Derniere update des message", value: stringify(fs.statSync('./folder/Dekuali.csv'))}
+    { name: "Derniere update des message", value: "none"}
 )
 
-
   message.channel.send(embed)
+  console.log(fs.statSync('./folder/Dekuali.csv'))
 }
 
 
