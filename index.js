@@ -64,7 +64,7 @@ bot.on('message', message => {
 
     function random(min, max) {
       min = Math.ceil(0)
-      max = Math.floor(csv.length - 1)
+      max = Math.floor(csv.length)
       rdm = Math.floor(Math.random() * (max - min +1) + min);
    }
 
@@ -73,7 +73,7 @@ bot.on('message', message => {
    var num //stock numéro mess
 
 
-if (args > 1 && args < (csv.length + 1) ){ //verif si nombre, sinon random
+if (args > 1 && args < (csv.length) ){ //verif si nombre, sinon random
   var text = csv[args[0]]
   num = args[0]
 }else{
