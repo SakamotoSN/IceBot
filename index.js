@@ -99,9 +99,12 @@ if (args > 1 && args < (csv.length - 1) ){ //verif si nombre, sinon random
     const embed = new MessageEmbed()
 	.setColor('#0099ff')
 	.setAuthor('De ' + auteur)
-  .addFields('\u200B','\u200B')
-	.setDescription((((mess.replace(/(?:\\[rn]|[\r\n]+)+/g, "\n")).replace("\\", "").replaceAll("\\", ""))) + '\u200B')
-  .addFields('\u200B','\u200B')
+  .addFields(
+    {name:'\u200B'},
+    {name: '\u200B', value: ((((mess.replace(/(?:\\[rn]|[\r\n]+)+/g, "\n")).replace("\\", "").replaceAll("\\", ""))) + '\u200B')},
+    {name:'\u200B', value: '\u200B'}
+  )
+	//.setDescription((((mess.replace(/(?:\\[rn]|[\r\n]+)+/g, "\n")).replace("\\", "").replaceAll("\\", ""))) + '\u200B')
 	.setImage(image)
 	.setFooter(date + ' || ' + num +  ' || '+ ID);
   message.channel.send(embed)
@@ -117,12 +120,9 @@ if(message.content.toLowerCase().startsWith(prefix + ("info wtf").toLowerCase())
   const embed = new MessageEmbed()
 	.setColor('#0099ff')
 	.setDescription("info sur la commande ,wtf")
-  .addFields("Nombre d'utilisation", "stats_wtf")
-  .addFields("Derniere update des message", fs.statSync('./folder/Dekuali.csv'))
   .addFields(
-    { name: 'my field title', value: 'some stuff' },
-    { name: 'my field title2', value: 'some stuff' },
-    { name: 'my field title3', value: 'some stuff' }
+    { name: "Nombre d'utilisation", value: stats_wtf },
+    { name: "Derniere update des message", value: fs.statSync('./folder/Dekuali.csv')}
 )
 
 
