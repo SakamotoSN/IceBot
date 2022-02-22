@@ -119,6 +119,13 @@ if(message.content.toLowerCase().startsWith(prefix + ("info wtf").toLowerCase())
 	.setDescription("info sur la commande ,wtf")
   .addFields("Nombre d'utilisation", "stats_wtf")
   .addFields("Derniere update des message", fs.statSync('./folder/Dekuali.csv'))
+  .addFields(
+    { name: 'my field title', value: 'some stuff' },
+    { name: 'my field title2', value: 'some stuff' },
+    { name: 'my field title3', value: 'some stuff' }
+)
+
+
   message.channel.send(embed)
 }
 
