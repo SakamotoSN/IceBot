@@ -77,6 +77,9 @@ bot.on('message', message => {
 if (args > 1 && args < (csv.length - 1) ){ //verif si nombre, sinon random
   var text = csv[args[0]]
   num = args[0]
+}else if (message.content.toLowerCase().startsWith(prefix + ("wtf stats"))){
+message.channel.send("YES")
+
 }else{
   random();
   var text = csv[rdm]
@@ -95,7 +98,7 @@ if (args > 1 && args < (csv.length - 1) ){ //verif si nombre, sinon random
     const embed = new MessageEmbed()
 	.setColor('#0099ff')
 	.setAuthor('De ' + auteur)
-	.setDescription((( "\u200B \u200B" + (mess.replace(/(?:\\[rn]|[\r\n]+)+/g, "\n")).replace("\\", "").replaceAll("\\", ""))) + " \n \n")
+	.setDescription((( "\n \n" + (mess.replace(/(?:\\[rn]|[\r\n]+)+/g, "\n")).replace("\\", "").replaceAll("\\", ""))) + " \n \n")
 	.setImage(image)
 	.setFooter(date + ' || ' + num +  ' || '+ ID);
   message.channel.send(embed)
