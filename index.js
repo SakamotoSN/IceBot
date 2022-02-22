@@ -66,6 +66,9 @@ bot.on('message', message => {
 
 
 if (args >= 1 && args <= (csv.length) ){ //verif si nombre, sinon random
+  console.log(args[0]+1)
+
+
   var text = csv[args[0]]
   num = args[0]
 }else{
@@ -84,7 +87,7 @@ if (args >= 1 && args <= (csv.length) ){ //verif si nombre, sinon random
     var date = JSON.stringify(split[2]).slice('10','-1')
     var mess = JSON.stringify(split[3]).slice('13','-1')
     var image = JSON.stringify(split[4]).slice('17','-1')
-    var react = JSON.stringify(split[5])//.slice()
+    var react = JSON.stringify(split[5]).slice( '12','-3')
 
     const embed = new MessageEmbed()
 	.setColor('#0099ff')
