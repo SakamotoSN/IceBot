@@ -114,7 +114,7 @@ if(message.content.toLowerCase().startsWith(prefix + ("info wtf").toLowerCase())
 	.setDescription(`info sur la commande "wtf"`)
   .addFields(
     { name: "Nombre d'utilisation", value: stats_wtf},
-    { name: "Derniere update des message", value: (fs.statSync('./folder/Dekuali.csv').mtime).slice('1', '-1') + " à " + (fs.statSync('./folder/Dekuali.csv').mtime).slice('1', '-1')}
+    { name: "Derniere update des message", value: (fs.statSync('./folder/Dekuali.csv').mtime)}
 )
 
   message.channel.send(embed)
