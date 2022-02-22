@@ -65,6 +65,7 @@ bot.on('message', message => {
     
    if (args[1] > 0){
 console.log("contien nombre")
+console.log(args[0].stringify())
    }else{
      console.log("pas de nombre")
    }
