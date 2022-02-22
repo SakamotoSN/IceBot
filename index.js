@@ -77,7 +77,7 @@ if (args > 1 && args < (csv.length - 1) ){ //verif si nombre, sinon random
   random();
   var text = csv[rdm]
 }
-
+console.log(text)
 
 
     let split = JSON.stringify(text).split(`","`);
@@ -95,9 +95,6 @@ if (args > 1 && args < (csv.length - 1) ){ //verif si nombre, sinon random
 	.setDescription((( " \n \n" + (mess.replace(/(?:\\[rn]|[\r\n]+)+/g, "\n")).replace("\\", "").replaceAll("\\", ""))) + " \n \n")
 	.setImage(image)
 	.setFooter(date + ' || ' + ' || '+ ID);
-   console.log(stringify(text[0])) 
-   console.log(text[0])
-   console.log(text)
   message.channel.send(embed)
 }
 }
