@@ -95,7 +95,7 @@ if (args >= 1 && args <= (csv.length) ){ //verif si nombre, sinon random
 	.setAuthor('De ' + auteur)
   .setDescription((((mess.replace(/(?:\\[rn]|[\r\n]+)+/g, "\n")).replace("\\", "").replaceAll("\\", ""))))
   .addFields(
-    {name: "Reaction" , value: "|| " + react + " ||"}
+    {name: "Reaction" , value: "| " + react + " |"}
   )
 	.setImage(image)
 	.setFooter(date + ' || ' + num +  ' || '+ ID);
