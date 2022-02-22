@@ -87,9 +87,6 @@ bot.on('message', message => {
 if (args > 1 && args < (csv.length - 1) ){ //verif si nombre, sinon random
   var text = csv[args[0]]
   num = args[0]
-}else if (message.content.toLowerCase().startsWith(prefix + ("wtf stats"))){
-message.channel.send("YES")
-
 }else{
   random();
   var text = csv[rdm]
@@ -115,7 +112,9 @@ message.channel.send("YES")
 }
 }
 
-
+if (message.content.toLowerCase().startsWith(prefix + ("wtf stats"))){
+message.channel.send("amogus")
+}
 
 
   
