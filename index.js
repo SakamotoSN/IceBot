@@ -20,7 +20,7 @@ var OnOff = false
 //,wtf
 var csv = [];
 const csvData = [];
-var stats_wtf = 1305; //oeoe update du 22/02/2202
+var stats_wtf = 1316; //oeoe update du 22/02/2202
 
 
 
