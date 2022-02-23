@@ -92,24 +92,35 @@ if (args >= 1 && args <= (csv.length) ){ //verif si nombre, sinon random
 
 
 
-
-
+    //sans reaction
+    if(react === " "){
+      const embed = new MessageEmbed()
+      .setColor('#0099ff')
+      .setAuthor('De ' + auteur)
+      .setDescription((((mess.replace(/(?:\\[rn]|[\r\n]+)+/g, "\n")).replace("\\", "").replaceAll("\\", ""))))
+      .setImage(image)
+      .setFooter(date + ' || ' + num +  ' || '+ ID);
+      message.channel.send(embed)
+    }
     
-    const embed = new MessageEmbed()
-	.setColor('#0099ff')
-	.setAuthor('De ' + auteur)
-  .setDescription((((mess.replace(/(?:\\[rn]|[\r\n]+)+/g, "\n")).replace("\\", "").replaceAll("\\", ""))))
-  if(react === " "){
-    .addFields(
-      {name: "Reaction" , value: "| " + react + " |"}
-    )
-  }
+    
+    
+    
+    //avec reaction
+    else{
 
+      const embed = new MessageEmbed()
+      .setColor('#0099ff')
+      .setAuthor('De ' + auteur)
+      .setDescription((((mess.replace(/(?:\\[rn]|[\r\n]+)+/g, "\n")).replace("\\", "").replaceAll("\\", ""))))
+      .addFields(
+        {name: "Reaction" , value: "| " + react + " |"}
+      )
+      .setImage(image)
+      .setFooter(date + ' || ' + num +  ' || '+ ID);
+      message.channel.send(embed)
+    }
 
-	.setImage(image)
-	.setFooter(date + ' || ' + num +  ' || '+ ID);
-  message.channel.send(embed)
-console.log(react)
 
   stats_wtf = stats_wtf + 1
 }
