@@ -90,13 +90,22 @@ if (args >= 1 && args <= (csv.length) ){ //verif si nombre, sinon random
     var image = JSON.stringify(split[4]).slice('17','-1')
     var react = JSON.stringify(split[5]).slice( '15','-4')
 
+
+
+
+
+    
     const embed = new MessageEmbed()
 	.setColor('#0099ff')
 	.setAuthor('De ' + auteur)
   .setDescription((((mess.replace(/(?:\\[rn]|[\r\n]+)+/g, "\n")).replace("\\", "").replaceAll("\\", ""))))
-  .addFields(
-    {name: "Reaction" , value: "| " + react + " |"}
-  )
+  if(react === " "){
+    .addFields(
+      {name: "Reaction" , value: "| " + react + " |"}
+    )
+  }
+
+
 	.setImage(image)
 	.setFooter(date + ' || ' + num +  ' || '+ ID);
   message.channel.send(embed)
