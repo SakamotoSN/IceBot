@@ -57,7 +57,7 @@ bot.on('message', message => {
 
   if(message.content.toLowerCase().startsWith(prefix + ("wtf"))){
 
-    if (message.channel.id === '715969826551627897') {
+    if (message.channel.id === '490465700519870474') {
 
     let args = message.content.split(" ").slice(1)
 
@@ -141,7 +141,7 @@ if(message.content.toLowerCase().startsWith(prefix + ("info wtf").toLowerCase())
   message.channel.send(embed)
 }
 
-if(message.content.toLowerCase().startsWith(prefix + ("info").toLowerCase())){
+if(message.content.toLowerCase().startsWith(prefix + ("help").toLowerCase())){
 
   const embed = new MessageEmbed()
 	.setColor('#0099ff')
