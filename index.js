@@ -134,13 +134,24 @@ if(message.content.toLowerCase().startsWith(prefix + ("info wtf").toLowerCase())
 	.setDescription(`info sur la commande "wtf"`)
   .addFields(
     { name: "Nombre d'utilisation", value: stats_wtf},
-    { name: "Dernière mises à jour des messages", value: (fs.statSync('./folder/Dekuali.csv').mtime)}
+    { name: "Dernière mises à jour des messages", value: (fs.statSync('./folder/Dekuali.csv').mtime)},
+    { name: ",wtf", value: "avoir un message random"},
+    { name: ",wtf (numero)", value: "avoir un message spécifique via le numéro donner en bas au centre de la commande"},
 )
-
   message.channel.send(embed)
 }
 
+if(message.content.toLowerCase().startsWith(prefix + ("info").toLowerCase())){
 
+  const embed = new MessageEmbed()
+	.setColor('#0099ff')
+	.setDescription(`info sur Ice-bot`)
+  .addFields(
+    { name: ",info (commmande)", value: "donne des infos sur la commande comme son utilisation"},
+    { name: ",wtf", value: "Donne un message du salon <#487918136650366976>"},
+)
+  message.channel.send(embed)
+}
   
     
     
