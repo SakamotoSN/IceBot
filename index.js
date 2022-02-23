@@ -59,17 +59,10 @@ bot.on('message', message => {
 
     if (message.channel.id === '490465700519870474') {
 
-    let args = message.content.split(" ").slice(1)
-
-
-   var num //stock numéro mess
-
+      let args = message.content.split(" ").slice(1)
+      var num //stock numéro mess
 
 if (args >= 1 && args <= (csv.length) ){ //verif si nombre, sinon random
-  
-  console.log(   (parseInt(args[0]))+1)
-
-
   var text = csv[parseInt(args[0])-1]
   num = args[0]
 }else{
@@ -90,8 +83,6 @@ if (args >= 1 && args <= (csv.length) ){ //verif si nombre, sinon random
     var image = JSON.stringify(split[4]).slice('17','-1')
     var react = JSON.stringify(split[5]).slice( '15','-4')
 
-
-
     //sans reaction
     if(react === ""){
       const embed = new MessageEmbed()
@@ -102,10 +93,6 @@ if (args >= 1 && args <= (csv.length) ){ //verif si nombre, sinon random
       .setFooter(date + ' || ' + num +  ' || '+ ID);
       message.channel.send(embed)
     }
-    
-    
-    
-    
     //avec reaction
     else{
 
@@ -127,6 +114,16 @@ if (args >= 1 && args <= (csv.length) ){ //verif si nombre, sinon random
 }
 
 
+
+
+
+
+
+
+
+
+
+//info
 if(message.content.toLowerCase().startsWith(prefix + ("info wtf").toLowerCase())){
 
   const embed = new MessageEmbed()
@@ -141,6 +138,13 @@ if(message.content.toLowerCase().startsWith(prefix + ("info wtf").toLowerCase())
   message.channel.send(embed)
 }
 
+
+
+
+
+
+
+//help
 if(message.content.toLowerCase().startsWith(prefix + ("help").toLowerCase())){
 
   const embed = new MessageEmbed()
