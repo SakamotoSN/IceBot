@@ -132,6 +132,7 @@ if(message.content.toLowerCase().startsWith(prefix + ("info wtf").toLowerCase())
   .addFields(
     { name: "Nombre d'utilisation", value: stats_wtf},
     { name: "Dernière mises à jour des messages", value: (fs.statSync('./folder/Dekuali.csv').mtime)},
+    { name: "Message enregistré", value: csv.length},
     { name: ",wtf", value: "avoir un message random"},
     { name: ",wtf (numero)", value: "avoir un message spécifique via le numéro donner en bas au centre de la commande"},
 )
