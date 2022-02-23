@@ -100,7 +100,7 @@ if (args >= 1 && args <= (csv.length) ){ //verif si nombre, sinon random
 	.setImage(image)
 	.setFooter(date + ' || ' + num +  ' || '+ ID);
   message.channel.send(embed)
-console.log(num)
+console.log(react)
 
   stats_wtf = stats_wtf + 1
 }
@@ -114,7 +114,7 @@ if(message.content.toLowerCase().startsWith(prefix + ("info wtf").toLowerCase())
 	.setDescription(`info sur la commande "wtf"`)
   .addFields(
     { name: "Nombre d'utilisation", value: stats_wtf},
-    { name: "Derniere update des message", value: (fs.statSync('./folder/Dekuali.csv').mtime)}
+    { name: "Dernière mises à jour des messages", value: (fs.statSync('./folder/Dekuali.csv').mtime)}
 )
 
   message.channel.send(embed)
