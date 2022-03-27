@@ -58,8 +58,10 @@ bot.on('message', message => {
 
 
 
-    if(message.content.toLowerCase() === "ratio"){
+    if(message.startsWith.toLowerCase() === "ratio"){
         message.react('🔥');
+	message.react('❄️');
+	    
     }
 
 
