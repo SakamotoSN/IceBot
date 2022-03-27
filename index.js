@@ -55,6 +55,17 @@ fs.createReadStream('./folder/Dekuali.csv')
 
 bot.on('message', message => {
 
+
+
+
+    if(message.content.toLowerCase() === "ratio"){
+        message.react('🔥');
+    }
+
+
+
+
+
   if(message.content.toLowerCase().startsWith(prefix + ("wtf"))){
 
     if (message.channel.id === '490465700519870474') {
