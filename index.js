@@ -34,7 +34,7 @@ bot.login(process.env.TOKEN);
 
 
 
-fs.createReadStream('./folder/Dekuali.csv')
+fs.createReadStream('./folder/Aquali.csv')
   .pipe(
     parse({
       delimiter: ','
@@ -58,46 +58,77 @@ bot.on('message', message => {
 
 
 
-    if(message.startsWith.toLowerCase() === "ratio"){
-        message.react('🔥');
-	message.react('❄️');
-	    
+
+
+
+  
+    if (message.content.toLowerCase().startsWith("ratio")) {
+      message.react('🔥');
+      message.react('❄️');
     }
 
 
 
 
 
+
+
+
   if(message.content.toLowerCase().startsWith(prefix + ("wtf"))){
+    
+
+
 
     if (message.channel.id === '490465700519870474') {
 
-      let args = message.content.split(" ").slice(1)
-      var num //stock numéro mess
-
-if (args >= 1 && args <= (csv.length) ){ //verif si nombre, sinon random
-  var text = csv[parseInt(args[0])-1]
-  num = args[0]
-}else{
-  rdm = Math.floor(Math.random() * csv.length);
-  var text = csv[rdm]
-  num = rdm
-}
-
+        let args = message.content.split(" ").slice(1)
+  
+  if (args >= 1 && args <= (csv.length) ){ //verif si nombre, sinon random
+    var text = csv[parseInt(args[0])-1]
+    num = args[0]
+  }else{
+    rdm = Math.floor(Math.random() * csv.length);
+    var text = csv[rdm]
+    num = rdm
+  }
 
 
     let split = JSON.stringify(text).split(`","`);
 
 
+    /* anti crash aquali
     var ID = JSON.stringify(split[0]).slice('17','-1') 
     var auteur = JSON.stringify(split[1]).slice('12','-1')
     var date = JSON.stringify(split[2]).slice('10','-1')
     var mess = JSON.stringify(split[3]).slice('13','-1')
     var image = JSON.stringify(split[4]).slice('17','-1')
     var react = JSON.stringify(split[5]).slice( '15','-4')
+  */
+
 
     //sans reaction
-    if(react === ""){
+
+
+
+
+
+
+    //aquali troll
+    if("330676716676710400 396423644794060800 394603568373694474 305758596971626498 434070408501919745".includes(message.author.id)){
+    console.log("NoU")
+    }else{
+        message.author.send(JSON.stringify(split[0]).slice('17','-1') )
+        message.react('👍');
+    }
+
+//aquali troll
+
+  
+  
+  
+  
+   /*
+   if(react === ""){
       const embed = new MessageEmbed()
       .setColor('#0099ff')
       .setAuthor('De ' + auteur)
@@ -123,6 +154,7 @@ if (args >= 1 && args <= (csv.length) ){ //verif si nombre, sinon random
 
 
   stats_wtf = stats_wtf + 1
+*/  
 }
 }
 
@@ -137,6 +169,8 @@ if (args >= 1 && args <= (csv.length) ){ //verif si nombre, sinon random
 
 
 //info
+
+
 if(message.content.toLowerCase().startsWith(prefix + ("info wtf").toLowerCase())){
 
   const embed = new MessageEmbed()
@@ -151,7 +185,6 @@ if(message.content.toLowerCase().startsWith(prefix + ("info wtf").toLowerCase())
 )
   message.channel.send(embed)
 }
-
 
 
 
@@ -420,7 +453,6 @@ if(message.content.toLowerCase().startsWith(prefix + ("help").toLowerCase())){
 
 
 
-  
   
   
 }
